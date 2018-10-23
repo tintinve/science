@@ -1,10 +1,10 @@
-// Boring burger menu START
-function myFunction(x) {
-  x.classList.toggle("change");
-}
+/* ASK JONAS WHYT PARCEL DOES NOT ALLOWS TO FETCH FROM A LOCAL JSON FILE AND LIVE-SERVER DOES
+const template = document.querySelector("#template1").content;
+const main = document.querySelector("main");
+fetch("bigArticles.json")
+  .then(res => res.json())
+  .then(data => show(data));
 
-const container = document.querySelector(".container");
-container.addEventListener("click", e => {
-  myFunction(container);
-});
-// // Boring burger menu END
+function show(data) {
+  console.log(data);
+}*/
