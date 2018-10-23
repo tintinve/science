@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.9.4"
+  },
+  "dependencies": {
+    "gsap": "^2.0.2"
   }
 }
