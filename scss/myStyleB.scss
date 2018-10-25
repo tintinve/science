@@ -129,13 +129,10 @@ body {
         width: 80%;
         font-size: 1em;
         background-color: $bkgColor;
-        padding: 0px 0 0 0;
+        padding: 0 0 0 50px;
         margin: 10px auto 0 auto;
         p:first-child {
-          color: blue;
           font-size: 0.7em;
-          margin: 5px 0 0 27px;
-          padding: 10px 0 5px 0;
         }
         p:nth-child(3) {
           color: $aGray;
@@ -145,10 +142,13 @@ body {
         }
       }
       p:nth-child(4) {
-        float: right;
-        margin: 20px 30px 0 0;
+        // this is p about porto
         font-size: 0.7em;
         font-weight: normal;
+        margin-right: 10%;
+      }
+      label > div > p {
+        margin-left: 18px; // to align the text, same effect as move the radio buttons to the left. (don't know how to move the whole input line. if move input, only the button will move, the text will stay at its original position)
       }
     }
   }
@@ -204,4 +204,7 @@ body {
 }
 .hide {
   opacity: 0; // temp solution
+}
+.blue {
+  color: blue;
 }
