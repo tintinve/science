@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="School Assigment">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript, SaaS, SCSS">
-    <meta name="author" content="Laise, Marie, Pedro & Yan">
+    <meta name="author" content="Laise, Marie, Pedro, Yan & Damir">
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/myStyleB.scss">
@@ -65,31 +65,48 @@
             <h1>Vælg antal magasiner</h1>
             <div class="block3Container">
                 <div>
-                    <p>Spar 787 kr.</p>
-                    <input type="radio" name="1" value="male"> 2 nr. for 69,50 kr.</label>
-                    <p>Kun 34.75 kr. pr. magasin</p>
+                    <label for="spar787">
+                        <p>Spar 787 kr.</p>
+                        <input id="spar787" type="radio" name="antal" value="2"> 2 nr. for 69,50 kr.
+                    </label>
+                    <p>Kun 34.75 kr. pr. magasin</p></label>
                 </div>
                 <div>
-                    <p>Spar 1003 kr.</p>
-                    <input type="radio" name="1" value="female"> 6 nr. for 169,50 kr.
+                    <label for="spar1003">
+                        <p>Spar 1003 kr.</p>
+                        <input id="spar1003" type="radio" name="antal" value="6"> 6 nr. for 169,50 kr.
+                    </label>
                     <p>Kun 28.25 kr. pr. magasin</p>
                 </div>
                 <div>
-                    <p>Spar 1346 kr.</p>
-                    <input type="radio" name="1" value="other"> 12 nr. for 299,50 kr.
+                    <label for="spar1346">
+                        <p>Spar 1346 kr.</p>
+                        <input id="spar1346" type="radio" name="antal" value="12"> 12 nr. for 299,50 kr.
+                    </label>
                     <p>Kun 24.95 kr. pr. magasin</p>
                 </div>
                 <p>+ 39,59 kr. i porto og eksp.</p>
             </div>
         </div>
         <div class="block4">
-            <h1>Vælg antal magasiner</h1>
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
+            <h1>Angiv kundeoplysninger</h1>
+            <div>
+                <label for="fornavn">Fornavn <strong>*</strong></label>
+                <input type="text" id="fornavn" required>
+            </div>
+            <div><label for="fornavn">Efternavn <strong>*</strong></label>
+                <input type="text" id="fornavn">
+            </div>
+            <div><label for="fornavn">Adresse <strong>*</strong></label>
+                <input type="text" id="fornavn">
+            </div>
+            <div><label for="postNrBy">Postnr. & By <strong>*</strong></label>
+                <input type="postNr" id="postNrBy">
+                <input type="by" id="postNrBy">
+            </div>
+            <div><label for="fornavn">Email <strong>*</strong></label>
+                <input type="text" id="fornavn">
+            </div>
 
         </div>
         <div class="block5">
@@ -97,7 +114,8 @@
             <div class="block5Container">
                 <div>
                     <p>Spar 787 kr.</p>
-                    <input type="radio" name="1" value="male"> 2 nr. for 69,50 kr.</label>
+
+                    <input type="radio" name="1" value="male"> 2 nr. for 69,50 kr.
                     <p>Kun 34.75 kr. pr. magasin</p>
                 </div>
                 <div>

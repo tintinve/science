@@ -137,7 +137,7 @@ body {
           margin: 5px 0 0 27px;
           padding: 10px 0 5px 0;
         }
-        p:nth-child(3) {
+        p:nth-child(2) {
           color: $aGray;
           font-size: 0.7em;
           margin: 5px 0 0 27px;
@@ -153,9 +153,49 @@ body {
     }
   }
   .block4 {
-    height: 300px;
+    height: 350px;
+    background-color: $bkgColor;
     h1 {
       @include h1Setting();
+    }
+    div {
+      margin: 11px 0 0 55px;
+      font-size: 0.8em;
+      height: 40px;
+      width: 75%;
+      position: relative;
+      $inputHeigh: 35px;
+      label {
+        text-align: center;
+        line-height: $inputHeigh;
+        height: $inputHeigh;
+      }
+      strong {
+        color: red;
+      }
+      input {
+        width: 60%;
+        height: $inputHeigh;
+        float: right;
+        position: absolute;
+        left: 90px;
+      }
+    }
+    div:nth-child(2) {
+      margin-top: 30px;
+    }
+    div:nth-child(5) {
+      input:nth-child(2) {
+        width: 40%;
+        margin-left: 64px;
+
+        float: right;
+      }
+      input:nth-child(3) {
+        width: 16%;
+
+        float: left;
+      }
     }
   }
   .block5 {
@@ -193,10 +233,6 @@ body {
         font-weight: normal;
       }
     }
-  }
-  footer {
-    background-color: red;
-    height: 80px;
   }
 }
 .grey-out {
