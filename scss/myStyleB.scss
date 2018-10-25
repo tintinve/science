@@ -152,4 +152,50 @@ body {
       }
     }
   }
+  .block4 {
+    height: 300px;
+    h1 {
+      @include h1Setting();
+    }
+  }
+  .block5 {
+    height: 400px;
+    h1 {
+      @include h1Setting();
+    }
+    .block5Container {
+      padding-top: 25px;
+      font-weight: bold;
+      div {
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        font-size: 1em;
+        background-color: $bkgColor;
+        padding: 0px 0 0 0;
+        margin: 10px auto 0 auto;
+        p:first-child {
+          color: blue;
+          font-size: 0.7em;
+          margin: 5px 0 0 27px;
+          padding: 10px 0 5px 0;
+        }
+        p:nth-child(3) {
+          color: $aGray;
+          font-size: 0.7em;
+          margin: 5px 0 0 27px;
+          padding: 2px 0 5px 0;
+        }
+      }
+      p:nth-child(4) {
+        float: right;
+        margin: 20px 30px 0 0;
+        font-size: 0.7em;
+        font-weight: normal;
+      }
+    }
+  }
+  footer {
+    background-color: red;
+    height: 80px;
+  }
 }
