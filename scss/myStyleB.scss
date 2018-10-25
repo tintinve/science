@@ -142,10 +142,11 @@ body {
           padding: 2px 0 5px 0;
         }
       }
-      p:nth-child(4) {
-        // this is p about porto
+      p:nth-child(4):not(.small-font) {
+        // this is the <p> about porto,
         font-size: 0.7em;
         font-weight: normal;
+        text-align: right;
         margin-right: 10%;
       }
       label > div > p {
