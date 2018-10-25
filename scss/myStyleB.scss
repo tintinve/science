@@ -125,11 +125,12 @@ body {
       padding-top: 25px;
       font-weight: bold;
       div {
+        position: relative;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
         width: 80%;
         font-size: 1em;
         background-color: $bkgColor;
-        padding: 0 0 0 50px;
+        padding: 0px 0 0 50px;
         margin: 10px auto 0 auto;
         p:first-child {
           font-size: 0.7em;
@@ -174,7 +175,6 @@ body {
         padding: 0px 0 0 0;
         margin: 10px auto 0 auto;
         p:first-child {
-          color: blue;
           font-size: 0.7em;
           margin: 5px 0 0 27px;
           padding: 10px 0 5px 0;
@@ -207,4 +207,21 @@ body {
 }
 .blue {
   color: blue;
+}
+.small-font {
+  font-size: 0.7em;
+  padding: 5px 5px 5px 0;
+  font-weight: normal;
+}
+.white-on-green {
+  // need to be behind .small-font, need to overwrite padding setting
+  background-color: $greenColor;
+  color: white;
+  padding: 5px;
+}
+.top-right-absolute {
+  position: absolute;
+  margin: 0;
+  right: 0;
+  top: 0;
 }
