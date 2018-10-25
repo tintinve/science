@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * select which jacket, for man or women
+ */
 // when pick a size for jacket, automaticly mark that jacket-gender to be selectede
 const genderJacketSelectS = document.querySelectorAll("select.jacket");
 genderJacketSelectS.forEach(g => g.addEventListener("change", markSelect));
@@ -13,7 +16,6 @@ function markSelect(g) {
   if (g.target.querySelector("option[selected]")) {
     g.target.querySelector("option[selected]").removeAttribute("selected");
   }
-  console.log(g.target.value);
   // mark checked to the one that's clicked
   g.target.parentElement
     .querySelector('input[type="radio"')
@@ -33,3 +35,13 @@ function markSelect(g) {
     .querySelector("input.jacket-gender:not([checked])")
     .parentElement.querySelector("select").value = "";
 }
+/**
+ * select nr of issue
+ */
+let nrOfIssue = document.querySelectorAll('.block3 input[type="radio"]');
+nrOfIssue.forEach(n =>
+  n.addEventListener("change", () => {
+    // if already has checked, remove border to reset
+    console.log(n.value);
+  })
+);
