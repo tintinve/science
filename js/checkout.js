@@ -9,6 +9,11 @@ function markSelect(g) {
       .querySelector("input.jacket-gender[checked]")
       .removeAttribute("checked");
   }
+  // remove the default selected option (the 'choose size' text one)
+  if (g.target.querySelector("option[selected]")) {
+    g.target.querySelector("option[selected]").removeAttribute("selected");
+  }
+  console.log(g.target.value);
   // mark checked to the one that's clicked
   g.target.parentElement
     .querySelector('input[type="radio"')
@@ -23,4 +28,8 @@ function markSelect(g) {
     .querySelector("input.jacket-gender:not([checked])")
     .parentElement.querySelector("h3")
     .classList.add("grey-out");
+  //remove any selected size of the unchosen gender
+  document
+    .querySelector("input.jacket-gender:not([checked])")
+    .parentElement.querySelector("select").value = "";
 }
