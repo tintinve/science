@@ -36,28 +36,30 @@
             <h1>Vælg Tilbud</h1>
             <div>
                 <div>
-                    <h3>Windbreaker - herre</h3>
-                    <img src="assets/img/jakke.png">
-                    <p>Size:</p>
+                    <h3>Windbreaker - Herre</h3>
+                    <label for="jacket-gender-male">
+                        <img src="assets/img/jakke.png"></label>
                     <form>
                         <select name="size">
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
+                            <option value disabled='disabled' selected>choose size</option>
+                            <option value="M">&nbsp;&nbsp;&nbsp;&nbsp;M</option>
+                            <option value="L">&nbsp;&nbsp;&nbsp;&nbsp;L</option>
+                            <option value="XL">&nbsp;&nbsp;&nbsp;&nbsp;XL</option>
                         </select>
-                        <input type="checkbox">
+                        <input type="radio" id="jacket-gender-male" name="jacket-gender" class="jacket-gender" value="male">
                     </form>
                 </div>
                 <div>
-                    <h3>Windbreaker - herre</h3>
-                    <img src="assets/img/jakke.png">
-                    <p>Size:</p>
+                    <h3>Windbreaker - Damen</h3>
+                    <label for="jacket-gender-female">
+                        <img src="assets/img/jakke.png"></label>
                     <select name="size">
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
+                        <option value disabled='disabled' selected>choose size</option>
+                        <option value="M">&nbsp;&nbsp;&nbsp;&nbsp;M</option>
+                        <option value="L">&nbsp;&nbsp;&nbsp;&nbsp;L</option>
+                        <option value="XL">&nbsp;&nbsp;&nbsp;&nbsp;XL</option>
                     </select>
-                    <input type="checkbox">
+                    <input type="radio" id="jacket-gender-female" name="jacket-gender" class="jacket-gender" value="female">
                 </div>
             </div>
         </div>
@@ -115,6 +117,8 @@
             </div>
 
     </form>
+    <script src="js/checkout.js"></script>
+
 </body>
 
 </html>
