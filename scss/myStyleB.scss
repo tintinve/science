@@ -195,6 +195,20 @@ body {
       }
     }
   }
+  .block6 {
+    *:not(li) {
+      text-align: center;
+    }
+    .order-overview-container {
+      width: 80%;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+      h3 {
+        color: white;
+        background-color: blue;
+        padding: 7px;
+      }
+    }
+  }
   footer {
     background-color: red;
     height: 80px;
