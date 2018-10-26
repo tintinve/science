@@ -155,6 +155,7 @@ body {
         font-weight: normal;
         text-align: right;
         margin-right: 10%;
+        margin-bottom: 0;
       }
       label > div > p {
         margin-left: 18px; // to align the text, same effect as move the radio buttons to the left. (don't know how to move the whole input line. if move input, only the button will move, the text will stay at its original position)
@@ -244,6 +245,8 @@ body {
     }
   }
   .block6 {
+    padding-bottom: 30px;
+    background-color: $bkgColor;
     *:not(li) {
       text-align: center;
       font-weight: bold;
@@ -263,6 +266,8 @@ body {
       background-color: #ddd;
       padding: 15px;
     }
+  }
+  .block7 {
     button {
       width: 80%;
       margin-top: 30px;
