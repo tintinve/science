@@ -45,10 +45,10 @@
                         <option value="L">&nbsp;&nbsp;&nbsp;&nbsp;L</option>
                         <option value="XL">&nbsp;&nbsp;&nbsp;&nbsp;XL</option>
                     </select>
-                    <input type="radio" id="jacket-gender-male" name="jacket-gender" class="jacket-gender" value="male">
+                    <input type="radio" id="jacket-gender-male" name="jacket-gender" class="jacket-gender hide" value="male">
                 </div>
                 <div>
-                    <h3>Windbreaker - Damen</h3>
+                    <h3>Windbreaker - Dame</h3>
                     <label for="jacket-gender-female">
                         <img src="assets/img/jakke.png"></label>
                     <select name="size" class="jacket">
@@ -57,34 +57,38 @@
                         <option value="L">&nbsp;&nbsp;&nbsp;&nbsp;L</option>
                         <option value="XL">&nbsp;&nbsp;&nbsp;&nbsp;XL</option>
                     </select>
-                    <input type="radio" id="jacket-gender-female" name="jacket-gender" class="jacket-gender" value="female">
+                    <input type="radio" id="jacket-gender-female" name="jacket-gender" class="jacket-gender hide" value="female">
                 </div>
             </div>
         </div>
         <div class="block3">
             <h1>Vælg antal magasiner</h1>
             <div class="block3Container">
-                <div>
-                    <label for="spar787">
-                        <p>Spar 787 kr.</p>
-                        <input id="spar787" type="radio" name="antal" value="2"> 2 nr. for 69,50 kr.
-                    </label>
-                    <p>Kun 34.75 kr. pr. magasin</p></label>
-                </div>
-                <div>
-                    <label for="spar1003">
-                        <p>Spar 1003 kr.</p>
-                        <input id="spar1003" type="radio" name="antal" value="6"> 6 nr. for 169,50 kr.
-                    </label>
-                    <p>Kun 28.25 kr. pr. magasin</p>
-                </div>
-                <div>
-                    <label for="spar1346">
-                        <p>Spar 1346 kr.</p>
-                        <input id="spar1346" type="radio" name="antal" value="12"> 12 nr. for 299,50 kr.
-                    </label>
-                    <p>Kun 24.95 kr. pr. magasin</p>
-                </div>
+                <label for="nr-of-issues-2">
+                    <div>
+                        <p class="blue">Spar 787 kr.</p>
+                        <input type="radio" name="nr-of-issues" value="2" id="nr-of-issues-2" class=""> <span class='blue'>2</span>
+                        <span> nr. for 69,50 kr.</span>
+                        <p class="small-font">Kun 34.75 kr. pr. magasin</p>
+                    </div>
+                </label>
+                <label for="nr-of-issues-6">
+                    <div>
+                        <p class="blue">Spar 1003 kr.</p>
+                        <p class="white-on-green top-right-absolute small-font">most popular</p>
+                        <input type="radio" name="nr-of-issues" value="6" id="nr-of-issues-6" class=""> <span class='blue'>6</span>
+                        <span> nr. for 169,50 kr.</span>
+                        <p class="small-font">Kun 28.25 kr. pr. magasin</p>
+                    </div>
+                </label>
+                <label for="nr-of-issues-12">
+                    <div>
+                        <p class="blue">Spar 1346 kr.</p>
+                        <input type="radio" name="nr-of-issues" value="12" id="nr-of-issues-12" class=""> <span class='blue'>12</span>
+                        <span> nr. for 299,50 kr.</span>
+                        <p class="small-font">Kun 24.95 kr. pr. magasin</p>
+                    </div>
+                </label>
                 <p>+ 39,59 kr. i porto og eksp.</p>
             </div>
         </div>
@@ -131,7 +135,28 @@
                 <p>+ 39,59 kr. i porto o
 
             </div>
-
+        </div>
+        <div class="block6">
+            <div class="order-overview">
+                <div class="order-overview-container">
+                    <h3>Bestilling</h3>
+                    <p class="issue-choice"></p>
+                    <p>+</p>
+                    <p class="jacket-choice"></p>
+                    <p>+</p>
+                    <p>39,50 kr. i porto og eksp.</p>
+                    <div class="i-alt">I ALT: <span class="sum"></span> kr.</div>
+                </div>
+            </div>
+            <button type="submit">Gå til sikker betaling</button>
+            <div class="info">
+                <ul>
+                    <li>Efter Tilbuddet forsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
+                    <li>Illustreret Videnskab udkommer 18 gange om året.</li>
+                    <li>abonnement betales for 4 numre ad gangen, i alt 315,80 kr (78,95 kr. pr. nummer).</li>
+                </ul>
+            </div>
+        </div>
     </form>
     <script src="js/checkout.js"></script>
 

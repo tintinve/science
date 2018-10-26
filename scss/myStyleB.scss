@@ -125,17 +125,15 @@ body {
       padding-top: 25px;
       font-weight: bold;
       div {
+        position: relative;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
         width: 80%;
         font-size: 1em;
         background-color: $bkgColor;
-        padding: 0px 0 0 0;
+        padding: 0px 0 0 50px;
         margin: 10px auto 0 auto;
         p:first-child {
-          color: blue;
           font-size: 0.7em;
-          margin: 5px 0 0 27px;
-          padding: 10px 0 5px 0;
         }
         p:nth-child(2) {
           color: $aGray;
@@ -144,11 +142,15 @@ body {
           padding: 2px 0 5px 0;
         }
       }
-      p:nth-child(4) {
-        float: right;
-        margin: 20px 30px 0 0;
+      p:nth-child(4):not(.small-font) {
+        // this is the <p> about porto,
         font-size: 0.7em;
         font-weight: normal;
+        text-align: right;
+        margin-right: 10%;
+      }
+      label > div > p {
+        margin-left: 18px; // to align the text, same effect as move the radio buttons to the left. (don't know how to move the whole input line. if move input, only the button will move, the text will stay at its original position)
       }
     }
   }
@@ -214,7 +216,6 @@ body {
         padding: 0px 0 0 0;
         margin: 10px auto 0 auto;
         p:first-child {
-          color: blue;
           font-size: 0.7em;
           margin: 5px 0 0 27px;
           padding: 10px 0 5px 0;
@@ -234,7 +235,74 @@ body {
       }
     }
   }
+  .block6 {
+    *:not(li) {
+      text-align: center;
+      font-weight: bold;
+    }
+    .order-overview-container {
+      padding: 3px;
+      width: 80%;
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+      h3 {
+        color: white;
+        background-color: blue;
+        padding: 7px;
+      }
+    }
+    .i-alt {
+      width: 98%;
+      background-color: #ddd;
+      padding: 15px;
+    }
+    button {
+      width: 80%;
+      margin-top: 30px;
+      position: relative;
+      left: 10%;
+      font-size: 1.35em;
+      color: white;
+      background-color: $greenColor;
+      padding: 11px;
+    }
+    li {
+      width: 90%;
+      position: relative;
+      left: -15px;
+      font-weight: normal;
+      text-align: left;
+      font-size: 0.8em;
+      margin-bottom: 1em;
+    }
+  }
+  footer {
+    background-color: red;
+    height: 80px;
+  }
 }
 .grey-out {
   color: lightgrey;
+}
+.hide {
+  opacity: 0; // temp solution
+}
+.blue {
+  color: blue;
+}
+.small-font {
+  font-size: 0.7em;
+  padding: 5px 5px 5px 0;
+  font-weight: normal;
+}
+.white-on-green {
+  // need to be behind .small-font, need to overwrite padding setting
+  background-color: $greenColor;
+  color: white;
+  padding: 5px;
+}
+.top-right-absolute {
+  position: absolute;
+  margin: 0;
+  right: 0;
+  top: 0;
 }
