@@ -26,7 +26,7 @@ $aGray: hsla(0, 0%, 37%, 1);
 }
 
 body {
-  width: 435px;
+  width: 100vw;
   header {
     p {
       color: $greenColor;
@@ -208,12 +208,13 @@ body {
     }
   }
   .block5 {
-    height: 400px;
     h1 {
       @include h1Setting();
     }
     .block5Container {
-      padding-top: 25px;
+      img {
+        width: 100vw;
+      }
       font-weight: bold;
       div {
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
