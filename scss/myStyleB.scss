@@ -198,8 +198,10 @@ body {
   .block6 {
     *:not(li) {
       text-align: center;
+      font-weight: bold;
     }
     .order-overview-container {
+      padding: 3px;
       width: 80%;
       box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       h3 {
@@ -207,6 +209,30 @@ body {
         background-color: blue;
         padding: 7px;
       }
+    }
+    .i-alt {
+      width: 98%;
+      background-color: #ddd;
+      padding: 15px;
+    }
+    button {
+      width: 80%;
+      margin-top: 30px;
+      position: relative;
+      left: 10%;
+      font-size: 1.35em;
+      color: white;
+      background-color: $greenColor;
+      padding: 11px;
+    }
+    li {
+      width: 90%;
+      position: relative;
+      left: -15px;
+      font-weight: normal;
+      text-align: left;
+      font-size: 0.8em;
+      margin-bottom: 1em;
     }
   }
   footer {
