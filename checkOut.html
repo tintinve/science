@@ -129,7 +129,42 @@
         <div class="block5">
             <h1>Vælg betaling</h1>
             <div class="block5Container">
-                <img src="assets/img/block5.png" alt="img">
+                <label for="visa">
+                    <div>
+                        <input type="radio" name="paymentType" value="visa" id="visa" class=""> <span></span>
+                        <span> Visa / Dankort</span>
+                        <img src="assets/img/logo-dankort.png" alt="logo">
+                        <img src="assets/img/logo-fbf.png" alt="logo">
+                    </div>
+                </label>
+                <label for="kreditKort">
+                    <div>
+                        <input type="radio" name="paymentType" value="kreditKort" id="kreditKort" class=""> <span></span>
+                        <span> KreditKort</span>
+                        <img src="assets/img/visa.png" alt="logo">
+                        <img src="assets/img/master200px.png" alt="logo">
+                        <img src="assets/img/visa-electron.png" alt="logo">
+                        <img src="assets/img/Maestro.png" alt="logo">
+                    </div>
+                </label>
+                <label for="mobilePay">
+                    <div>
+                        <input type="radio" name="paymentType" value="mobilePay" id="mobilePay" class=""> <span></span>
+                        <span> MobilePay</span>
+                        <img src="assets/img/mobilepay.png" alt="logo">
+                    </div>
+                </label>
+                <label for="giroKort">
+                    <div>
+                        <input type="radio" name="paymentType" value="giroKort" id="giroKort" class=""> <span></span>
+                        <span> Girokort (+ 15 kr.)</span>
+                    </div>
+                </label>
+                <label>
+                    <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
+                        og acceåteret
+                        abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
+                </label>
             </div>
         </div>
         <div class="block7">
