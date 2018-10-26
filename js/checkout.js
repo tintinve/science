@@ -21,10 +21,11 @@ function markSelect(g) {
     .querySelector('input[type="radio"')
     .setAttribute("checked", "checked");
   // remove the grey-out color of h3 if this was the case. need this because user can switch between the 2 genders
-  document
+  let chosen = document
     .querySelector("input.jacket-gender[checked]")
-    .parentElement.querySelector("h3")
-    .classList.remove("grey-out");
+    .parentElement.querySelector("h3");
+  chosen.classList.remove("grey-out");
+  updateJacketChoice(`${chosen.textContent} Size: ${g.target.value}`);
   // grey-out the jacket-gender that's not selected
   document
     .querySelector("input.jacket-gender:not([checked])")
@@ -35,13 +36,38 @@ function markSelect(g) {
     .querySelector("input.jacket-gender:not([checked])")
     .parentElement.querySelector("select").value = "";
 }
+const jacketP = document.querySelector(".block6 .jacket-choice");
+const issueP = document.querySelector(".block6 .issue-choice");
+
+function updateJacketChoice(j) {
+  jacketP.textContent = j;
+}
 /**
- * select nr of issue
+ * get nr of issue and write to block 6
+ * calculate the full price
  */
 let nrOfIssue = document.querySelectorAll('.block3 input[type="radio"]');
 nrOfIssue.forEach(n =>
   n.addEventListener("change", () => {
-    // if already has checked, remove border to reset
-    console.log(n.value);
+    issueP.textContent = "";
+    issueP.textContent += n.nextElementSibling.textContent;
+    issueP.textContent += n.nextElementSibling.nextElementSibling.textContent;
+    let sumStringWithComma;
+    let originalText = n.nextElementSibling.nextElementSibling.textContent;
+    if (originalText.indexOf("for") > -1) {
+      let priceString = originalText.substring(
+        originalText.indexOf("for") + 4,
+        originalText.indexOf("kr")
+      );
+      let priceNr = Number(priceString.replace(",", ""));
+      let sum = priceNr + 3950; // porto
+      let sumString = String(sum);
+      sumStringWithComma =
+        sumString.substring(0, sumString.length - 2) +
+        "," +
+        sumString.substring(sumString.length - 2);
+      document.querySelector(".i-alt").textContent =
+        "I Alt: " + sumStringWithComma + "kr.";
+    }
   })
 );
