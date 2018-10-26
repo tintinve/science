@@ -109,9 +109,12 @@ body {
     select {
       width: 60%;
       margin: 0 auto;
-      border: 1px solid black;
-      height: 40px;
-      text-align-last: center; // what's this!!!
+      height: 170px;
+      border: none;
+      text-align-last: center; // trick solution
+      option {
+        height: 40px;
+      }
     }
   }
   .block3 {
