@@ -49,6 +49,10 @@ body {
         }
       }
     }
+    button.not-active {
+      opacity: 0.5; // by default grey-out submit button, turn it on using JS when all fields passed local validations
+      pointer-events: none;
+    }
   }
 }
 h1 {
