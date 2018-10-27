@@ -41,12 +41,16 @@ function getDataBasedonPostNr() {
       dataArray.forEach(findMatch);
       function findMatch(p, i) {
         if (Number(userInputNr) === p.Postnr) {
+          postNrInput.className = "true";
           by.textContent = `${dataArray[i].Bynavn}`;
           if (dataArray[i].Gade || dataArray[i].Firma) {
             adress.value = `${dataArray[i].Firma} ${dataArray[i].Gade}`;
             adress.className = "true";
           }
         }
+        // else {
+        //   postNrInput.className = "false";
+        // }
       }
     });
 }
