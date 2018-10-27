@@ -56,3 +56,21 @@ function getDataBasedonPostNr() {
       }
     });
 }
+
+/**
+ * show input field based on which payment method is selected
+ */
+const allPaymentMethodS = document.querySelectorAll('.pay input[type="radio"]');
+allPaymentMethodS.forEach(p =>
+  p.addEventListener("click", () => {
+    // remove previously checked
+    allPaymentMethodS.forEach(p => {
+      p.removeAttribute("checked");
+      p.removeAttribute("class");
+    });
+    // add newly checked
+    document
+      .querySelector('input[name="payment"]:checked')
+      .setAttribute("checked", "checked");
+  })
+);

@@ -75,7 +75,15 @@ body {
       color: $light-grey;
     }
     input[type="radio"] {
+      visibility: hidden; // hide radio button, keep label
+    }
+    div.pay input[type="number"] {
       display: none;
+    }
+    div.pay input[type="radio"]:checked ~ input[type="number"] {
+      display: inherit;
+      position: relative;
+      top: -50px;
     }
   }
 }
