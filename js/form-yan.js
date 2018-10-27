@@ -37,13 +37,15 @@ function getDataBasedonPostNr() {
     .then(data => data.json())
     .then(d => {
       dataArray = d;
-      console.log(dataArray);
       let userInputNr = postNrInput.value;
       dataArray.forEach(findMatch);
       function findMatch(p, i) {
         if (Number(userInputNr) === p.Postnr) {
           by.textContent = `${dataArray[i].Bynavn}`;
-          adress.value = `${dataArray[i].Firma} ${dataArray[i].Gade}`;
+          if (dataArray[i].Gade || dataArray[i].Firma) {
+            adress.value = `${dataArray[i].Firma} ${dataArray[i].Gade}`;
+            adress.className = "true";
+          }
         }
       }
     });
