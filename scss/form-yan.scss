@@ -41,7 +41,7 @@ body {
         }
         &:focus + label,
         &[class] + label {
-          transform: scale(0.4) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
+          transform: scale(0.45) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
           color: $light-grey;
         }
         &.false + label {
@@ -77,13 +77,29 @@ body {
     input[type="radio"] {
       visibility: hidden; // hide radio button, keep label
     }
+    div.pay {
+      height: auto;
+    }
     div.pay input[type="number"] {
       display: none;
+    }
+    div.pay input[type="number"] + label {
+      display: none;
+      pointer-events: none;
     }
     div.pay input[type="radio"]:checked ~ input[type="number"] {
       display: inherit;
       position: relative;
       top: -50px;
+    }
+    div.pay input[type="radio"]:checked ~ input[type="number"] + label {
+      display: inherit;
+    }
+    div.pay img {
+      height: 35px;
+      margin-right: 4px;
+      width: auto;
+      vertical-align: middle;
     }
   }
 }

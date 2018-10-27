@@ -41,17 +41,24 @@
         <div class="pay">
             <input type="radio" name="payment" id="visa-dankort">
             <label for="visa-dankort">Visa/Dankort</label>
-            <input type="number">
+            <input type="number" name="card-nr" id="dankort-nr">
+            <label for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dancard logo"></label>
+            <input type="number" name="dankort-exp card-exp" id="dankort-exp" autocomplete="cc-exp">
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="credit-card">
             <label for="credit-card">Kreditkort</label>
-            <input type="number">
+            <input type="number" name="card-nr" id="credit-card-nr" autocomplete="cc-number">
+            <label for="credit-card-nr"><img src="assets/img/visa.png" alt="visa card logo"><img src="assets/img/visa-electron.png"
+                    alt="visa electron card logo"><img src="assets/img/master200px.png" alt="master card logo"><img src="assets/img/Maestro.png"
+                    alt="maestro card logo"></label>
+            <input type="number" name="credit-card-exp card-exp" id="credit-card-exp" autocomplete="cc-exp">
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="mobile-pay">
             <label for="mobile-pay">MobilePay</label>
-            <input type="number">
+            <input type="number" name="card-nr" id="mobile-pay-nr">
+            <label for="mobile-pay-nr"><img src="assets/img/mobilepay.png" alt="mobilepay logo"></label>
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="girokort">

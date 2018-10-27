@@ -67,10 +67,17 @@ allPaymentMethodS.forEach(p =>
     allPaymentMethodS.forEach(p => {
       p.removeAttribute("checked");
       p.removeAttribute("class");
+      p.nextElementSibling.style.opacity = "1";
     });
     // add newly checked
     document
       .querySelector('input[name="payment"]:checked')
       .setAttribute("checked", "checked");
+    // hide text label of payment, so that it doesn't overlap with payment icons
+    document.querySelector(
+      'input[name="payment"]:checked+label'
+    ).style.opacity = "0";
+    // auto focus input field for the selected payment
+    document.querySelector('input[name="payment"]:checked ~ input').focus();
   })
 );
