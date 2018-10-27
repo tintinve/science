@@ -1,0 +1,31 @@
+$dark-grey: #333;
+$light-grey: #bebebe;
+
+* {
+  font-family: sans-serif;
+}
+form > div {
+  font-size: 48px;
+  height: 70px;
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
+  label {
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease-out;
+    transform-origin: top left;
+    color: $dark-grey;
+  }
+  input {
+    height: 70px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid $dark-grey;
+  }
+  input:focus + label {
+    transform: scale(0.5);
+    color: $light-grey;
+  }
+}
