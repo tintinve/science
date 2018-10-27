@@ -9,6 +9,7 @@ const inputFieldS = document.querySelectorAll(
   "form>div>input:not([type='radio'])"
 );
 const paymentBlockElementS = document.querySelectorAll(".pay");
+const mobilePayInput = document.querySelector("#mobile-pay-nr");
 const submitButton = document.querySelector('button[type="submit"]');
 const mobilePaySubmit = document.querySelector("#mobile-pay-confirm");
 
@@ -112,6 +113,7 @@ function closeCard(m) {
   m.target.parentElement.parentElement
     .querySelector('input[type="radio"]')
     .removeAttribute("checked");
+  mobilePayInput.value = "";
   mobilePaySubmit.className = "not-active";
   submitButton.className = "not-active";
 }
@@ -125,11 +127,11 @@ function checkPaymentChoice() {
   let paymentChoice = document.querySelectorAll(
     'input[name="payment"][checked]'
   );
-  let mobilePayInput = document.querySelector("#mobile-pay-nr");
   mobilePayInput.addEventListener("input", checkMobilePay);
   function checkMobilePay() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
+      window.scrollTo(0, 270);
     }
   }
 }
