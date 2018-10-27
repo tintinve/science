@@ -65,8 +65,7 @@ body {
       }
     }
     button.not-active {
-      opacity: 0.5; // by default grey-out submit button, turn it on using JS when all fields passed local validations
-      pointer-events: none;
+      display: none; // by default hide submit button, turn it on using JS when all fields passed local validations
     }
     .explaination {
       font-size: 12px;
@@ -117,6 +116,9 @@ body {
     }
     div.pay img.filler {
       visibility: hidden;
+    }
+    #mobile-pay-confirm.not-active {
+      display: none;
     }
     #mobile-pay-confirm {
       width: 100%;
