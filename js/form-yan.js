@@ -5,7 +5,10 @@
  */
 
 const form = document.querySelector("form");
-const inputFieldS = document.querySelectorAll("input");
+const inputFieldS = document.querySelectorAll(
+  "form>div>input:not([type='radio'])"
+);
+const paymentBlockElementS = document.querySelectorAll(".pay");
 const submitButton = document.querySelector('button[type="submit"]');
 inputFieldS.forEach(checkInput);
 function checkInput(input, i) {
@@ -18,8 +21,11 @@ function checkInput(input, i) {
     }
     // check how many input field has passed validity check, when all passed then allow submit button
     let validCount = document.querySelectorAll(".true").length;
+    console.log(validCount);
     if (validCount === inputFieldS.length) {
-      submitButton.classList.remove("not-active");
+      // show payment
+      paymentBlockElementS.forEach(e => (e.style.display = "inherit"));
+      //      submitButton.classList.remove("not-active");
     }
   });
 }
@@ -68,7 +74,6 @@ allPaymentMethodS.forEach(p =>
       p.removeAttribute("checked");
       p.removeAttribute("class");
       p.nextElementSibling.style.opacity = "1";
-      console.log(p.nextElementSibling);
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
     });
     // add newly checked

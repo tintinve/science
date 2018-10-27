@@ -77,6 +77,9 @@ body {
     input[type="radio"] {
       visibility: hidden; // hide radio button, keep label
     }
+    .pay {
+      display: none;
+    }
     div.pay {
       height: auto;
       .payment-label-around-div {
@@ -116,7 +119,7 @@ body {
       visibility: hidden;
     }
     #mobile-pay-confirm {
-      width: 80%;
+      width: 100%;
       height: 60px;
       border-radius: 34px;
       margin-top: 20px;
