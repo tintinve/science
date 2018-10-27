@@ -58,40 +58,49 @@ body {
     }
   }
   .block1 {
-    position: relative;
     height: 260px;
     background-color: $bkgColor;
     h1 {
-      width: 100%;
-      height: 100px;
-      margin: 0;
-      font-size: 1.35em;
-      padding: 25px;
+      @include h1Setting();
     }
-    img:nth-child(2) {
-      position: absolute;
-      top: 120px;
-      width: 70px;
-      left: 80px;
-    }
-    img:nth-child(3) {
-      position: absolute;
-      width: 70px;
-      top: 120px;
-      left: 80px;
-      transform: rotate(10deg);
-    }
-    img:nth-child(4) {
-      position: absolute;
-      width: 40px;
-      top: 150px;
-      left: 180px;
-    }
-    img:nth-child(5) {
-      position: absolute;
-      width: 120px;
-      top: 110px;
-      left: 235px;
+    div:nth-child(2) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      img {
+        margin: 25px auto 0 auto;
+        width: 120px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      div:first-child {
+        height: auto;
+        background-color: blue;
+        grid-column: 1/2;
+        img {
+          position: absolute;
+          transform: rotate(20deg);
+        }
+        img:nth-child(2) {
+          transform: rotate(0deg);
+        }
+      }
+      div:nth-child(2) {
+        grid-column: 2/3;
+        display: block;
+        img {
+          width: 150%;
+          margin: 70px 0 0 0;
+        }
+      }
+      div:nth-child(3) {
+        height: auto;
+        grid-column: 3/4;
+        img {
+          width: 100%;
+          margin: 0 0 0 -35px;
+        }
+      }
     }
   }
   .block2 {
