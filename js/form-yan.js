@@ -25,6 +25,11 @@ function checkInput(input, i) {
     if (validCount === inputFieldS.length) {
       // show payment
       paymentBlockElementS.forEach(e => (e.style.display = "inherit"));
+      document.querySelector("h1.pay").scrollIntoView({
+        block: "start",
+        inline: "nearest",
+        behavior: "smooth"
+      });
       //      submitButton.classList.remove("not-active");
     }
   });

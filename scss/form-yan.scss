@@ -1,5 +1,5 @@
 $dark-grey: #333;
-$light-grey: #bebebe;
+$light-grey: #5c5c5c;
 
 * {
   font-family: sans-serif;
@@ -20,7 +20,7 @@ body {
       position: relative;
       margin-bottom: 20px;
       label {
-        font-size: 48px;
+        font-size: 36px;
         position: absolute;
         top: 0;
         transition: all 0.3s ease-out;
@@ -28,6 +28,7 @@ body {
         color: $dark-grey;
       }
       input {
+        color: $light-grey;
         height: 60px;
         width: 100%;
         border: none;
