@@ -122,7 +122,10 @@ body {
           border-bottom: none;
         }
         input.digit2 {
-          width: 6ch;
+          width: 3ch;
+        }
+        input.digit2 + span {
+          width: 3ch;
         }
       }
       .half-height {
