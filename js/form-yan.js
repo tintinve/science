@@ -68,6 +68,7 @@ allPaymentMethodS.forEach(p =>
       p.removeAttribute("checked");
       p.removeAttribute("class");
       p.nextElementSibling.style.opacity = "1";
+      p.nextElementSibling.nextElementSibling.style.transform = "scale(0)";
     });
     // add newly checked
     document
@@ -77,7 +78,15 @@ allPaymentMethodS.forEach(p =>
     document.querySelector(
       'input[name="payment"]:checked+label'
     ).style.opacity = "0";
+    // show the selected payment wrapper
+    document.querySelector(
+      'input[name="payment"]:checked ~ .payment-label-around-div'
+    ).style.transform = "scale(1)";
     // auto focus input field for the selected payment
-    document.querySelector('input[name="payment"]:checked ~ input').focus();
+    document
+      .querySelector(
+        'input[name="payment"]:checked ~ .payment-label-around-div input'
+      )
+      .focus();
   })
 );

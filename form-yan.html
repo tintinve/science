@@ -57,8 +57,15 @@
         <div class="pay">
             <input type="radio" name="payment" id="mobile-pay">
             <label for="mobile-pay">MobilePay</label>
-            <input type="number" name="card-nr" id="mobile-pay-nr">
-            <label for="mobile-pay-nr"><img src="assets/img/mobilepay.png" alt="mobilepay logo"></label>
+            <label class="payment-label-around-div" for="mobile-pay-nr"><img src="assets/img/mobilepay.png" alt="mobilepay logo">
+                <p>
+                    <span>+45</span>
+                    <input type="tel" name="card-nr" id="mobile-pay-nr">
+                </p>
+                <div id="mobile-pay-confirm">
+                    <div></div>
+                </div>
+            </label>
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="girokort">
