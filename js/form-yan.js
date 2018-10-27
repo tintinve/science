@@ -68,7 +68,8 @@ allPaymentMethodS.forEach(p =>
       p.removeAttribute("checked");
       p.removeAttribute("class");
       p.nextElementSibling.style.opacity = "1";
-      p.nextElementSibling.nextElementSibling.style.transform = "scale(0)";
+      console.log(p.nextElementSibling);
+      p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
     });
     // add newly checked
     document

@@ -41,18 +41,28 @@
         <div class="pay">
             <input type="radio" name="payment" id="visa-dankort">
             <label for="visa-dankort">Visa/Dankort</label>
-            <input type="number" name="card-nr" id="dankort-nr">
-            <label for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dancard logo"></label>
-            <input type="number" name="dankort-exp card-exp" id="dankort-exp" autocomplete="cc-exp">
+            <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+                <p>
+                    <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
+                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="number" name="card-exp-month" id="dankort-exp-month" placeholder="måned" class="digit2"><span></span>
+                    / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
+                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
+            </label>
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="credit-card">
             <label for="credit-card">Kreditkort</label>
-            <input type="number" name="card-nr" id="credit-card-nr" autocomplete="cc-number">
-            <label for="credit-card-nr"><img src="assets/img/visa.png" alt="visa card logo"><img src="assets/img/visa-electron.png"
-                    alt="visa electron card logo"><img src="assets/img/master200px.png" alt="master card logo"><img src="assets/img/Maestro.png"
-                    alt="maestro card logo"></label>
-            <input type="number" name="credit-card-exp card-exp" id="credit-card-exp" autocomplete="cc-exp">
+            <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+                <p>
+                    <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
+                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="number" name="card-exp-month" id="dankort-exp-month" placeholder="måned" class="digit2"><span></span>
+                    / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
+                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
+            </label>
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="mobile-pay">
@@ -67,7 +77,13 @@
         <div class="pay">
             <input type="radio" name="payment" id="girokort">
             <label for="girokort">Girokort (+ 10 kr)</label>
-            <input type="number">
+            <label class="payment-label-around-div" for="giri">
+                <label for="giro-check">
+                    <input type="checkbox" name="giro-check" id="giro-check">
+                    <span>With giro payment, you ***
+                    </span>
+                </label>
+            </label>
         </div>
         <button type="submit" class="not-active">Gennemfør Køb</button>
         <div id="mobile-pay-confirm">
