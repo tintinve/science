@@ -1,4 +1,9 @@
 "use strict";
+
+/**
+ * live validation of input field
+ */
+
 const form = document.querySelector("form");
 const inputFieldS = document.querySelectorAll("input");
 const submitButton = document.querySelector('button[type="submit"]');
@@ -13,9 +18,33 @@ function checkInput(input, i) {
     }
     // check how many input field has passed validity check, when all passed then allow submit button
     let validCount = document.querySelectorAll(".true").length;
-    console.log(validCount);
     if (validCount === inputFieldS.length) {
       submitButton.classList.remove("not-active");
     }
   });
+}
+/**
+ * get address based on post number
+ */
+const postNrInput = document.querySelector("#post-nr");
+const by = document.querySelector("#by");
+const adress = document.querySelector("#address");
+
+let dataArray = [];
+postNrInput.addEventListener("input", getDataBasedonPostNr);
+function getDataBasedonPostNr() {
+  fetch("js/postnummer.json")
+    .then(data => data.json())
+    .then(d => {
+      dataArray = d;
+      console.log(dataArray);
+      let userInputNr = postNrInput.value;
+      dataArray.forEach(findMatch);
+      function findMatch(p, i) {
+        if (Number(userInputNr) === p.Postnr) {
+          by.textContent = `${dataArray[i].Bynavn}`;
+          adress.value = `${dataArray[i].Firma} ${dataArray[i].Gade}`;
+        }
+      }
+    });
 }
