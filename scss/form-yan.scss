@@ -87,23 +87,6 @@ body {
           display: inline-block;
           width: auto;
         }
-        #mobile-pay-confirm {
-          width: 80%;
-          height: 60px;
-          border-radius: 34px;
-          margin-top: 20px;
-          background-color: #596aa3;
-          position: relative;
-        }
-        #mobile-pay-confirm div {
-          height: 56px;
-          width: 56px;
-          border-radius: 28px;
-          position: absolute;
-          top: 2px;
-          left: 2px;
-          background-color: white;
-        }
       }
     }
 
@@ -124,6 +107,38 @@ body {
       margin-right: 4px;
       width: auto;
       vertical-align: middle;
+    }
+    #mobile-pay-confirm {
+      width: 80%;
+      height: 60px;
+      border-radius: 34px;
+      margin-top: 20px;
+      background-color: #596aa3;
+      position: relative;
+      display: flex;
+    }
+    #mobile-pay-confirm div {
+      height: 56px;
+      width: 56px;
+      border-radius: 28px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-color: white;
+      display: flex;
+      p {
+        // temp solution, should use real check mark instead of >
+        color: #596aa3;
+        font-weight: bold;
+        align-self: center;
+        text-align: center;
+      }
+    }
+    #mobile-pay-confirm div + p {
+      color: white;
+      display: inline-block;
+      align-self: center;
+      text-align: center;
     }
   }
 }
