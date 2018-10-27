@@ -44,7 +44,9 @@ function getDataBasedonPostNr() {
           postNrInput.className = "true";
           by.textContent = `${dataArray[i].Bynavn}`;
           if (dataArray[i].Gade || dataArray[i].Firma) {
-            adress.value = `${dataArray[i].Firma} ${dataArray[i].Gade}`;
+            adress.value = dataArray[i].Firma
+              ? `${dataArray[i].Firma}, ${dataArray[i].Gade}`
+              : `${dataArray[i].Gade}`; // so that if no Firma, Gade doesn't start with a comma and an empty space
             adress.className = "true";
           }
         }
