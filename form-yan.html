@@ -12,32 +12,51 @@
 </head>
 
 <body>
-    <h1>Angiv kundeoplysninger</h1>
     <form>
+        <h1>Angiv kundeoplysninger</h1>
         <div>
-            <input type="text" id="fornavn" pattern="[a-zA-Z]+" placeholder=" " required>
+            <input type="text" name="fornavn" id="fornavn" pattern="[a-zA-Z]+" placeholder=" " required>
             <label for="fornavn">Fornavn</label>
         </div>
         <div>
-            <input type="text" id="efternavn" pattern="[a-zA-Z]+" placeholder=" " required>
+            <input type="text" name="efternavn" id="efternavn" pattern="[a-zA-Z]+" placeholder=" " required>
             <label for="efternavn">Efternavn</label>
         </div>
         <div>
-            <input type="number" id="post-nr" placeholder=" " min="1" max="9999" required>
+            <input type="number" name="post-nr" id="post-nr" placeholder=" " min="1" max="9999" required>
             <label for="post-nr">Postnr</label>
             <span id="by"></span>
         </div>
         <div>
-            <input type="text" id="address" placeholder=" " required>
+            <input type="text" name="address" id="address" placeholder=" " required>
             <label for="address">Adresse</label>
         </div>
+        <p class="explaination">We will send the order comfirmation to your email</p>
+        <p class="explaination">This email address is also your user login on WYPE and Docma</p>
         <div>
-            <input type="email" id="email" placeholder=" " required>
+            <input type="email" name="email" id="email" placeholder=" " required>
             <label for="email">Email</label>
         </div>
-        <button type="submit" class="not-active">Gå til sikker betaling</button>
-        <script src="js/form-yan.js"></script>
+        <h1>VÆLG SIKKET BETALINGSMETODE</h1>
+        <div class="credit-card">
+            <input type="radio" name="payment" id="visa-dankort">
+            <label for="visa-dankort">Visa/Dankort</label>
+        </div>
+        <div class="credit-card">
+            <input type="radio" name="payment" id="credit-card">
+            <label for="credit-card">Kreditkort</label>
+        </div>
+        <div class="credit-card">
+            <input type="radio" name="payment" id="mobile-pay">
+            <label for="mobile-pay">MobilePay</label>
+        </div>
+        <div class="credit-card">
+            <input type="radio" name="payment" id="girokort">
+            <label for="girokort">Girokort (+ 10 kr)</label>
+        </div>
+        <button type="submit" class="not-active">Gennemfør Køb</button>
     </form>
+    <script src="js/form-yan.js"></script>
 </body>
 
 </html>

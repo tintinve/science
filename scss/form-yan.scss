@@ -68,6 +68,15 @@ body {
       opacity: 0.5; // by default grey-out submit button, turn it on using JS when all fields passed local validations
       pointer-events: none;
     }
+    .explaination {
+      font-size: 12px;
+      position: relative;
+      top: -12px;
+      color: $light-grey;
+    }
+    input[type="radio"] {
+      display: none;
+    }
   }
 }
 h1 {
