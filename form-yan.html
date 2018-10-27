@@ -44,10 +44,9 @@
             <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
                 <p>
                     <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
-                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
-                <p><input type="number" name="card-exp-month" id="dankort-exp-month" placeholder="måned" class="digit2"><span></span>
-                    / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
-                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="måned"
+                        class="digit2"><span>
+                        / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
                 <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
             </label>
         </div>
@@ -57,10 +56,9 @@
             <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
                 <p>
                     <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
-                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
-                <p><input type="number" name="card-exp-month" id="dankort-exp-month" placeholder="måned" class="digit2"><span></span>
-                    / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
-                <img src="assets/img/logo-dankort.png" alt="dankort logo" class="filler">
+                <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="måned"
+                        class="digit2"><span>
+                        / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="år" class="digit2"></p>
                 <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
             </label>
         </div>
@@ -76,11 +74,11 @@
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="girokort">
-            <label for="girokort">Girokort (+ 10 kr)</label>
+            <label for="girokort">Girokort<br>(+ 10 kr)</label>
             <label class="payment-label-around-div" for="giri">
-                <label for="giro-check">
+                <label for="giro-check" id="for-giro">
                     <input type="checkbox" name="giro-check" id="giro-check">
-                    <span>With giro payment, you ***
+                    <span>With giro payment, you will blahblahblahblahblah
                     </span>
                 </label>
             </label>
