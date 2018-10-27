@@ -39,9 +39,10 @@
         </div>
         <h1 class="pay">VÆLG SIKKET BETALINGSMETODE</h1>
         <div class="pay">
-            <input type="radio" name="payment" id="visa-dankort">
+            <input type="radio" name="payment" id="visa-dankort" value="visa-dankort">
             <label for="visa-dankort">Visa/Dankort</label>
             <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+                <p class="close">x</p>
                 <p>
                     <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
                 <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="måned"
@@ -51,9 +52,12 @@
             </label>
         </div>
         <div class="pay">
-            <input type="radio" name="payment" id="credit-card">
+            <input type="radio" name="payment" id="credit-card" value="credit-card">
             <label for="credit-card">Kreditkort</label>
-            <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+            <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/visa.png" alt="visa logo"><img
+                    src="assets/img/visa-electron.png" alt="visa electron logo"><img src="assets/img/master200px.png"
+                    alt="master logo"><img src="assets/img/Maestro.png" alt="maestro logo">
+                <p class="close">x</p>
                 <p>
                     <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
                 <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="måned"
@@ -63,19 +67,21 @@
             </label>
         </div>
         <div class="pay">
-            <input type="radio" name="payment" id="mobile-pay">
+            <input type="radio" name="payment" id="mobile-pay" value="mobile-pay">
             <label for="mobile-pay">MobilePay</label>
-            <label class="payment-label-around-div" for="mobile-pay-nr"><img src="assets/img/mobilepay.png" alt="mobilepay logo">
+            <label class="payment-label-around-div half-height" for="mobile-pay-nr"><img src="assets/img/mobilepay.png"
+                    alt="mobilepay logo" id="mobile-pay-img">
+                <p class="close">x</p>
                 <p>
                     <span>+45</span>
-                    <input type="tel" name="card-nr" id="mobile-pay-nr">
+                    <input type="tel" name="card-nr" id="mobile-pay-nr" pattern="[1-9][0-9]{7}" required>
                 </p>
             </label>
         </div>
         <div class="pay">
-            <input type="radio" name="payment" id="girokort">
+            <input type="radio" name="payment" id="girokort" value="girokort">
             <label for="girokort">Girokort<br>(+ 10 kr)</label>
-            <label class="payment-label-around-div" for="giri">
+            <label class="payment-label-around-div half-height" for="giri">
                 <label for="giro-check" id="for-giro">
                     <input type="checkbox" name="giro-check" id="giro-check">
                     <span>With giro payment, you will blahblahblahblahblah

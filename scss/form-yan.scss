@@ -101,6 +101,7 @@ body {
         padding: 0;
       }
       .payment-label-around-div {
+        transform-origin: center center;
         position: absolute;
         width: 72vw;
         height: 42vw;
@@ -124,6 +125,17 @@ body {
           width: 6ch;
         }
       }
+      .half-height {
+        height: 19vw;
+      }
+      .half-height > p > span {
+        display: inline-block;
+        width: 4ch;
+      }
+      .half-height > p > input {
+        display: inline-block;
+        width: 8ch;
+      }
     }
     div.pay:nth-of-type(odd) {
       .payment-label-around-div {
@@ -143,10 +155,13 @@ body {
       display: inherit;
     }
     div.pay img {
-      height: 35px;
+      width: 50px;
       margin-right: 4px;
-      width: auto;
       vertical-align: middle;
+    }
+    img#mobile-pay-img {
+      width: 80px;
+      margin: 5px auto -5px 25px;
     }
     div.pay img.filler {
       visibility: hidden;
@@ -194,6 +209,13 @@ body {
     }
     #giro-check {
       width: 30px;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      text-align: right;
+      cursor: pointer;
     }
   }
 }

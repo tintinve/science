@@ -10,6 +10,8 @@ const inputFieldS = document.querySelectorAll(
 );
 const paymentBlockElementS = document.querySelectorAll(".pay");
 const submitButton = document.querySelector('button[type="submit"]');
+const mobilePaySubmit = document.querySelector("#mobile-pay-confirm");
+
 inputFieldS.forEach(checkInput);
 function checkInput(input, i) {
   //check validity of the input flied that loses focus
@@ -30,7 +32,6 @@ function checkInput(input, i) {
         inline: "nearest",
         behavior: "smooth"
       });
-      //      submitButton.classList.remove("not-active");
     }
   });
 }
@@ -101,3 +102,35 @@ allPaymentMethodS.forEach(p =>
       .focus();
   })
 );
+
+// close card when click on X
+const closeXS = document.querySelectorAll(".close");
+closeXS.forEach(x => x.addEventListener("click", closeCard));
+function closeCard(m) {
+  m.target.parentElement.style.transform = "scale(0)";
+  m.target.parentElement.previousElementSibling.style.opacity = "1";
+  m.target.parentElement.parentElement
+    .querySelector('input[type="radio"]')
+    .removeAttribute("checked");
+  mobilePaySubmit.className = "not-active";
+  submitButton.className = "not-active";
+}
+
+/**
+ * check payment
+ */
+const paymentS = document.querySelectorAll('input[name="payment"]');
+paymentS.forEach(p => p.addEventListener("change", checkPaymentChoice));
+function checkPaymentChoice() {
+  let paymentChoice = document.querySelectorAll(
+    'input[name="payment"][checked]'
+  );
+  let mobilePayInput = document.querySelector("#mobile-pay-nr");
+  mobilePayInput.addEventListener("input", checkMobilePay);
+  function checkMobilePay() {
+    if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
+      mobilePaySubmit.classList.remove("not-active");
+    }
+  }
+}
+//      submitButton.classList.remove("not-active");
