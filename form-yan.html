@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <h1>Angiv kundeoplysninger</h1>
     <form>
         <div>
             <input type="text" id="fornavn" pattern="[a-zA-Z]+" placeholder=" " required>
@@ -26,7 +27,7 @@
             <label for="address">Adresse</label>
         </div>
         <div>
-            <input type="number" id="post-nr" placeholder=" " required>
+            <input type="number" id="post-nr" placeholder=" " min="1" max="9999" required>
             <label for="post-nr">Postnr</label>
             <p></p>
         </div>
@@ -34,8 +35,8 @@
             <input type="email" id="email" placeholder=" " required>
             <label for="email">Email</label>
         </div>
-
-
+        <button type="submit">Gå til sikker betaling</button>
+        <script src="js/form-yan.js"></script>
     </form>
 </body>
 

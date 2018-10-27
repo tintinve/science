@@ -3,29 +3,52 @@ $light-grey: #bebebe;
 
 * {
   font-family: sans-serif;
-}
-form > div {
-  font-size: 48px;
-  height: 70px;
-  width: 80vw;
+  font-size: 24px;
   margin: 0 auto;
+}
+body {
+  width: 100vw;
   position: relative;
-  margin-bottom: 20px;
-  label {
-    position: absolute;
-    top: 0;
-    transition: all 0.3s ease-out;
-    transform-origin: top left;
-    color: $dark-grey;
+  form {
+    width: 80%;
+    * {
+      width: 100%;
+    }
+    div {
+      height: 70px;
+      margin: 0 auto;
+      position: relative;
+      margin-bottom: 20px;
+      label {
+        font-size: 48px;
+        position: absolute;
+        top: 0;
+        transition: all 0.3s ease-out;
+        transform-origin: top left;
+        color: $dark-grey;
+      }
+      input {
+        height: 60px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid $dark-grey;
+        font-size: 30px;
+        &:focus {
+          outline: none;
+        }
+        &:invalid:not(:placeholder-shown) {
+          color: red;
+        }
+        &:focus + label {
+          transform: scale(0.4) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
+          color: $light-grey;
+        }
+      }
+    }
   }
-  input {
-    height: 70px;
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid $dark-grey;
-  }
-  input:focus + label {
-    transform: scale(0.5);
-    color: $light-grey;
-  }
+}
+h1 {
+  // temp for demo, don't need this setting in the final solution
+  color: $light-grey;
+  margin: 1em auto;
 }
