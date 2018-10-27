@@ -39,9 +39,13 @@ body {
         &:invalid:not(:placeholder-shown) {
           color: red;
         }
-        &:focus + label {
+        &:focus + label,
+        &[class] + label {
           transform: scale(0.4) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
           color: $light-grey;
+        }
+        &.false + label {
+          color: red;
         }
       }
     }
