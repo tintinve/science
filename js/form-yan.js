@@ -137,13 +137,7 @@ function checkPaymentChoice() {
 }
 //      submitButton.classList.remove("not-active");
 
-// when close card, clear all fields?
-// too many digits of card number, smaller size?
 // masking
-// check why google input yy is not correct
-// autocomplete="postal-code"> see if this triggers checking JSON as well
-
-/* done and remember */
+// detect card type and only show img of chosen type
+/* remember */
 // use type='text' pattern="[0-9]*" to get only the num keyboard, use number gives keyboard with top num line, use tel is not sementicly correct
-// combine first and family name? autocomplete="name">
-// autocomplete="email">
