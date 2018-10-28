@@ -82,20 +82,20 @@ body {
     }
     div.pay {
       margin: 0;
-      border: 1px solid black;
+      box-shadow: 2px 2px $light-grey;
       width: 48%;
       height: 30vw;
       margin-bottom: 10px;
       position: relative;
       label {
-        font-size: 19px;
+        font-size: 23px;
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         padding-top: 10px;
-        text-align: center;
+        text-align: left;
       }
       label#for-giro {
         padding: 0;
@@ -115,14 +115,39 @@ body {
         text-align: left;
         transform: scale(0);
         transition: all 0.3s ease-out;
-        p,
-        input {
-          width: 80%;
+        p {
+          width: 90%;
           height: 40px;
           border-bottom: none;
+          &:nth-of-type(2):not(#mobile-pay-p) {
+            margin-top: 20px; // move the input area lower. temp solution
+          }
+          &:last-of-type:not(#mobile-pay-p) {
+            // the CVV line, move up and right. temp solution
+            width: 4ch;
+            position: relative;
+            top: -40px;
+            left: 40%;
+          }
+          input {
+            font-size: 18px;
+            height: 20px;
+            border-bottom: 1px dotted $light-grey;
+          }
+          &#mobile-pay-p input {
+            width: 50%;
+            height: 30px;
+            font-size: 24px;
+            padding: 6px 25px;
+            border: 1px solid $light-grey;
+            border-radius: 21px;
+          }
         }
         input.digit2 {
           width: 3ch;
+        }
+        input.digit4 {
+          width: 4ch;
         }
         input.digit2 + span {
           width: 3ch;
@@ -140,7 +165,7 @@ body {
         width: 8ch;
       }
     }
-    div.pay:nth-of-type(odd) {
+    div.pay:nth-of-type(even) {
       .payment-label-around-div {
         left: calc(1vw - 4px - 40vw);
       }
@@ -149,14 +174,14 @@ body {
       display: none;
       pointer-events: none;
     }
-    .payment-label-around-div ~ input[type="number"] {
-      display: inherit;
-      position: relative;
-      top: -50px;
-    }
-    div.pay input[type="radio"]:checked ~ input[type="number"] + label {
-      display: inherit;
-    }
+    // .payment-label-around-div ~ input[type="number"] {
+    //   display: inherit;
+    //   position: relative;
+    //   top: -50px;
+    // }
+    // div.pay input[type="radio"]:checked ~ input[type="number"] + label {
+    //   display: inherit;
+    // }
     div.pay img {
       width: 50px;
       margin-right: 4px;
@@ -164,7 +189,7 @@ body {
     }
     img#mobile-pay-img {
       width: 80px;
-      margin: 5px auto -5px 25px;
+      margin: 0 auto 0 15px;
     }
     div.pay img.filler {
       visibility: hidden;

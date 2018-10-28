@@ -14,16 +14,22 @@
 <body>
     <form>
         <h1>Angiv kundeoplysninger</h1>
-        <div>
+        <!-- <div>
             <input type="text" name="fornavn" id="fornavn" pattern="[a-zA-Z]+" placeholder=" " required>
             <label for="fornavn">Fornavn</label>
         </div>
         <div>
             <input type="text" name="efternavn" id="efternavn" pattern="[a-zA-Z]+" placeholder=" " required>
             <label for="efternavn">Efternavn</label>
+        </div> -->
+        <div>
+            <input type="text" name="full-name" id="full-name" pattern="[a-zA-Z]+ [a-zA-Z]+" placeholder=" "
+                autocomplete="name" required>
+            <label for="full-name">Navn</label>
         </div>
         <div>
-            <input type="number" name="post-nr" id="post-nr" placeholder=" " min="1" max="9999" required>
+            <input type="number" name="post-nr" id="post-nr" placeholder=" " min="1" max="9999" autocomplete="postal-code"
+                required>
             <label for="post-nr">Postnr</label>
             <span id="by"></span>
         </div>
@@ -34,7 +40,7 @@
         <p class="explaination">We will send the order comfirmation to your email</p>
         <p class="explaination">This email address is also your user login on WYPE and Docma</p>
         <div>
-            <input type="email" name="email" id="email" placeholder=" " required>
+            <input type="email" name="email" id="email" placeholder=" " autocomplete="email" required>
             <label for="email">Email</label>
         </div>
         <h1 class="pay">VÆLG BETALINGSMETODE</h1>
@@ -44,12 +50,14 @@
             <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
                 <p class="close">x</p>
                 <p>
-                    <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
-                <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="mm"
-                        class="digit2"><span>
-                        / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="yy" min="00"
-                        max="99" class="digit2"></p>
-                <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
+                    <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]*" autocomplete="cc-number"
+                        placeholder="Kortnummer"></p>
+                <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm" class="digit2"
+                        pattern="[0-9]*" autocomplete="cc-exp-month"><span>
+                        / </span><input type="text" pattern="[0-9]*" name="card-exp-year" id="dankort-exp-year"
+                        placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year"></p>
+                <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]*" placeholder="CVV"
+                        autocomplete="cc-csc" class="digit4"></p>
             </label>
         </div>
         <div class="pay">
@@ -60,12 +68,13 @@
                     alt="master logo"><img src="assets/img/Maestro.png" alt="maestro logo">
                 <p class="close">x</p>
                 <p>
-                    <input type="number" name="card-nr" id="dankort-nr" placeholder="Kortnummer"></p>
-                <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="mm"
-                        class="digit2"><span>
-                        / </span><input type="number" name="card-exp-year" id="dankort-exp-year" placeholder="yy" min="00"
-                        max="99" class="digit2"></p>
-                <p><input type="nummer" id="control" name="control" placeholder="Kontrolcifre"></p>
+                    <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]*" placeholder="Kortnummer"
+                        autocomplete="cc-number"></p>
+                <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
+                        autocomplete="cc-exp-month" class="digit2"><span>
+                        / </span><input type="text" name="card-exp-year" id="dankort-exp-year" placeholder="yyyy"
+                        maxlength="4" autocomplete="cc-exp-year" class="digit4"></p>
+                <p><input type="nummer" id="control" name="control" placeholder="CVV" autocomplete="cc-csc" class="digit4"></p>
             </label>
         </div>
         <div class="pay">
@@ -74,7 +83,7 @@
             <label class="payment-label-around-div half-height" for="mobile-pay-nr"><img src="assets/img/mobilepay.png"
                     alt="mobilepay logo" id="mobile-pay-img">
                 <p class="close">x</p>
-                <p>
+                <p id="mobile-pay-p">
                     <span>+45</span>
                     <input type="tel" name="card-nr" id="mobile-pay-nr" pattern="[1-9][0-9]{7}" required>
                 </p>
@@ -82,7 +91,7 @@
         </div>
         <div class="pay">
             <input type="radio" name="payment" id="girokort" value="girokort">
-            <label for="girokort">Girokort<br>(+ 10 kr)</label>
+            <label for="girokort">Girokort<br>(+10 kr)</label>
             <label class="payment-label-around-div half-height" for="giri">
                 <label for="giro-check" id="for-giro">
                     <input type="checkbox" name="giro-check" id="giro-check">
