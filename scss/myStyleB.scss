@@ -175,46 +175,7 @@ body {
     }
   }
   .block4 {
-    height: 350px;
-    background-color: $bkgColor;
-    h1 {
-      @include h1Setting();
-    }
-    div {
-      margin: 11px 0 0 55px;
-      font-size: 0.8em;
-      height: 40px;
-      width: 75%;
-      position: relative;
-
-      label {
-        text-align: center;
-        line-height: $inputHeigh;
-        height: $inputHeigh;
-      }
-
-      input {
-        width: 70%;
-        height: $inputHeigh;
-        float: right;
-        position: absolute;
-        left: 90px;
-      }
-    }
-    div:nth-child(2) {
-      margin-top: 30px;
-    }
-    div:nth-child(5) {
-      input:nth-child(2) {
-        width: 50%;
-        margin-left: 64px;
-        float: right;
-      }
-      input:nth-child(3) {
-        width: 16%;
-        float: left;
-      }
-    }
+    height: auto;
   }
   .block5 {
     h1 {
