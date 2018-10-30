@@ -91,13 +91,32 @@ allPaymentMethodS.forEach(p =>
     document
       .querySelector('input[name="payment"]:checked')
       .setAttribute("checked", "checked");
-    // add border highlight to checked payment and expand the card
+    // add border highlight to checked payment and expand the card/mobile-pay/giro section
     document.querySelector(
       'input[name="payment"]:checked'
     ).parentElement.style.border = "2px solid blue";
+    if (
+      document.querySelector('input[name="payment"]:checked').value ===
+      "girokort"
+    ) {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "100px";
+    } else if (
+      document.querySelector('input[name="payment"]:checked').value ===
+      "mobile-pay"
+    ) {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "130px";
+    } else {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "200px";
+    }
     document.querySelector(
       'input[name="payment"]:checked'
-    ).parentElement.style.height = "200px";
+    ).nextElementSibling.nextElementSibling.style.display = "inherit";
     // hide text label of payment, so that it doesn't overlap with payment icons
     // document.querySelector(
     //   'input[name="payment"]:checked+label'

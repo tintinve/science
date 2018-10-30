@@ -58,7 +58,7 @@ body {
         border-radius: 5px;
         background-color: white;
         padding-top: 5px;
-        padding-left: 5%;
+        padding-left: 0;
         font-size: 24px;
         &:focus {
           outline: none;
@@ -115,7 +115,8 @@ body {
       input[type="radio"] {
         height: 50px;
         & ~ .payment-label-around-div {
-          width: 100%;
+          width: 90%;
+          margin-left: 5%;
         }
       }
       label:not(.payment-label-around-div) {
@@ -133,22 +134,11 @@ body {
       }
       .payment-label-around-div {
         display: none;
-        // transform-origin: center center;
-        // position: absolute;
-        // width: 62vw;
-        // height: 42vw;
-        // left: calc(1vw - 1px);
-        // top: 4vw;
-        // border: 1px solid black;
-        // border-radius: 10px;
-        // padding: 10px;
-        // background-color: white;
-        // z-index: 2;
-        // text-align: left;
-        // transform: scale(0);
-        // transition: all 0.3s ease-out;
+        left: 0;
+        top: 40px;
         p {
-          width: 90%;
+          font-size: 13px;
+          width: 100%;
           height: 40px;
           border-bottom: none;
           &:nth-of-type(2):not(#mobile-pay-p) {
@@ -158,16 +148,17 @@ body {
             // the CVV line, move up and right. temp solution
             width: 4ch;
             position: relative;
-            top: -40px;
+            top: -36px;
             left: 40%;
           }
           input {
             font-size: 18px;
             height: 20px;
             border-bottom: 1px dotted $light-grey;
+            border-radius: 0;
           }
           &#mobile-pay-p input {
-            width: 70%;
+            width: 80%;
             height: 30px;
             font-size: 24px;
             padding: 6px 25px;
@@ -187,14 +178,6 @@ body {
       }
       .half-height {
         height: 19vw;
-      }
-      .half-height > p > span {
-        display: inline-block;
-        width: 4ch;
-      }
-      .half-height > p > input {
-        display: inline-block;
-        width: 8ch;
       }
     }
     div.pay input[type="number"] + label {
@@ -267,10 +250,11 @@ body {
     }
     #giro-check {
       width: 30px;
+      display: none;
     }
-    .close {
+    p.close {
       position: absolute;
-      right: 20px;
+      right: 0;
       top: 10px;
       text-align: right;
       cursor: pointer;
