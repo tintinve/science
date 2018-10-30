@@ -103,7 +103,8 @@ body {
       visibility: hidden; // hide radio button, keep label
     }
     div.pay {
-      height: 50px;
+      min-height: 50px;
+      height: auto;
       width: 80%;
       margin: 0 auto;
       position: relative;
@@ -111,32 +112,41 @@ body {
       padding: 0 10%;
       background-color: white;
       border-radius: 5px;
-      label {
+      input[type="radio"] {
+        height: 50px;
+        & ~ .payment-label-around-div {
+          width: 100%;
+        }
+      }
+      label:not(.payment-label-around-div) {
         color: black; // this should be black?
-        font-size: 13px;
+        height: 100%;
         position: absolute;
-        top: 17px;
+        top: 0;
         left: 5%;
         text-align: left;
-      }
-      label#for-giro {
-        padding: 0;
+        display: flex;
+        p {
+          font-size: 13px;
+          align-self: center;
+        }
       }
       .payment-label-around-div {
-        transform-origin: center center;
-        position: absolute;
-        width: 72vw;
-        height: 42vw;
-        left: calc(1vw - 1px);
-        top: 4vw;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 10px;
-        background-color: white;
-        z-index: 2;
-        text-align: left;
-        transform: scale(0);
-        transition: all 0.3s ease-out;
+        display: none;
+        // transform-origin: center center;
+        // position: absolute;
+        // width: 62vw;
+        // height: 42vw;
+        // left: calc(1vw - 1px);
+        // top: 4vw;
+        // border: 1px solid black;
+        // border-radius: 10px;
+        // padding: 10px;
+        // background-color: white;
+        // z-index: 2;
+        // text-align: left;
+        // transform: scale(0);
+        // transition: all 0.3s ease-out;
         p {
           width: 90%;
           height: 40px;
@@ -157,7 +167,7 @@ body {
             border-bottom: 1px dotted $light-grey;
           }
           &#mobile-pay-p input {
-            width: 50%;
+            width: 70%;
             height: 30px;
             font-size: 24px;
             padding: 6px 25px;
@@ -185,11 +195,6 @@ body {
       .half-height > p > input {
         display: inline-block;
         width: 8ch;
-      }
-    }
-    div.pay:nth-of-type(even) {
-      .payment-label-around-div {
-        left: calc(1vw - 4px - 40vw);
       }
     }
     div.pay input[type="number"] + label {
@@ -255,6 +260,9 @@ body {
       display: flex;
       * {
         align-self: center;
+      }
+      span {
+        font-size: 16px;
       }
     }
     #giro-check {

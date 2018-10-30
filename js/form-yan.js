@@ -84,15 +84,20 @@ allPaymentMethodS.forEach(p =>
       p.removeAttribute("class");
       p.nextElementSibling.style.opacity = "1";
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
+      p.parentElement.style.border = "none";
     });
     // add newly checked
     document
       .querySelector('input[name="payment"]:checked')
       .setAttribute("checked", "checked");
-    // hide text label of payment, so that it doesn't overlap with payment icons
+    // add border highlight to checked payment
     document.querySelector(
-      'input[name="payment"]:checked+label'
-    ).style.opacity = "0";
+      'input[name="payment"]:checked'
+    ).parentElement.style.border = "2px solid blue";
+    // hide text label of payment, so that it doesn't overlap with payment icons
+    // document.querySelector(
+    //   'input[name="payment"]:checked+label'
+    // ).style.opacity = "0";
     // show the selected payment wrapper
     document.querySelector(
       'input[name="payment"]:checked ~ .payment-label-around-div'
