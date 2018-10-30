@@ -33,6 +33,15 @@ $inputHeigh: 35px;
   margin: 0 auto 0 auto;
 }
 
+@mixin h2Setting {
+  width: 100%;
+  height: auto;
+  padding: 5px 0 5px 0;
+  margin: 0 0 0 50px;
+  font-size: 1em;
+  text-align: left;
+}
+
 body {
   width: 100vw;
   header {
@@ -188,40 +197,56 @@ body {
   .block3 {
     position: relative;
     background-color: $bkgColor;
-    h1 {
-      @include h1Setting();
+    h2 {
+      @include h2Setting();
     }
     .block3Container {
-      padding-top: 25px;
       font-weight: bold;
       div {
+        border-radius: 5px;
         position: relative;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
         width: 80%;
         font-size: 1em;
         background-color: $bkgColor;
-        padding: 0px 0 0 50px;
-        margin: 10px auto 0 auto;
-        p:first-child {
-          font-size: 0.7em;
+        padding: 0px 0 0 5px;
+        margin: 10px 10% 0 10%;
+        display: grid;
+        grid-template-columns: 0.4fr 0.4fr 0.8fr 2.1fr;
+        span {
+          align-self: center;
+          grid-column: 1/2;
+          font-size: 1.5em;
+          padding-top: 15px;
+        }
+        span.x {
+          grid-column: 2/3;
+          font-size: 1.1em;
+        }
+        span.prize {
+          grid-column: 4/5;
+          margin: 0;
+          font-size: 1.1em;
+        }
+        img {
+          max-width: 50px;
+          grid-row: 1/3;
+          grid-column: 3/4;
+          transform: scale(0.8);
+        }
+        input[type="radio"] {
+          display: none;
+        }
+        input:checked + label {
+          border: 5px solid red;
         }
         p:nth-child(2) {
           color: $aGray;
           font-size: 0.7em;
           margin: 5px 0 0 27px;
           padding: 2px 0 5px 0;
+          text-align: center;
         }
-      }
-      p:nth-child(4):not(.small-font) {
-        // this is the <p> about porto,
-        font-size: 0.7em;
-        font-weight: normal;
-        text-align: right;
-        margin-right: 10%;
-        margin-bottom: 0;
-      }
-      label > div > p {
-        margin-left: 18px; // to align the text, same effect as move the radio buttons to the left. (don't know how to move the whole input line. if move input, only the button will move, the text will stay at its original position)
       }
     }
   }
@@ -275,19 +300,20 @@ body {
 .hide {
   opacity: 0; // temp solution
 }
-.blue {
-  color: blue;
-}
+
 .small-font {
   font-size: 0.7em;
-  padding: 5px 5px 5px 0;
+  padding: 0;
+  margin: 0;
   font-weight: normal;
+  grid-column: 4/5;
 }
 .white-on-green {
   // need to be behind .small-font, need to overwrite padding setting
   background-color: $greenColor;
   color: white;
-  padding: 5px;
+  padding: 2px 4px;
+  border-radius: 0 5px 0 5px;
 }
 .top-right-absolute {
   position: absolute;
