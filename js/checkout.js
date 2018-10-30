@@ -72,7 +72,7 @@ allsubscriptionBox.forEach(p =>
         "," +
         sumString.substring(sumString.length - 2);
       document.querySelector(".i-alt").textContent =
-        "I Alt: " + sumStringWithComma + "kr.";
+        "I Alt: " + sumStringWithComma + " kr.";
     }
   })
 );
