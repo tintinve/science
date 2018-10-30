@@ -302,9 +302,29 @@ body {
       margin: 15px auto;
     }
   }
-  footer {
-    background-color: red;
-    height: 80px;
+  .block7 {
+    * {
+      font-size: 16px;
+      margin: 0.5em 0;
+    }
+    .button {
+      background-color: grey; //40c018
+      border-radius: 5px;
+      border-color: transparent;
+      color: #ffffff;
+      padding: 10px 32px;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+    .button.live {
+      background-color: #40c018;
+      pointer-events: inherit;
+    }
   }
 }
 .grey-out {
