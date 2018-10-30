@@ -3,12 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="description" content="School Assigment">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript, SaaS, SCSS">
     <meta name="author" content="Laise, Marie, Pedro, Yan & Damir">
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/myStyleB.scss">
+    <link rel="stylesheet" href="scss/form-yan.scss">
+    <link rel="stylesheet" href="css/style_block_5-6.css">
     <title>Document</title>
 </head>
 
@@ -26,19 +29,46 @@
             </div>
         </header>
         <div class="block1">
-            <h1>Få Illustreret Videnskab og CFBR Windbreaker</h1>
-            <div>
+            <br />
+            <h1>TRIN 1/3</h1>
+            <h3>Vælg køn og størrelse</h3>
+            <div id="sizeContainer">
+                <img src="assets/img/jakke.png"></label>
+                <h2>Herre </h2>
                 <div>
-                    <img src="assets/img/magazines1.png" alt="">
-                    hi!
+                    <input id="herreS" type="radio" name="trin1" value="h-s">
+                    <label for="herreS" class="radio">s</label>
                 </div>
                 <div>
-                    <div>+</div>
+                    <input id="herreM" type="radio" name="trin1" value="h-m">
+                    <label for="herreM" class="radio">m</label>
                 </div>
                 <div>
-                    <img src="assets/img/jakke.png" alt="">
+                    <input id="herreL" type="radio" name="trin1" value="h-l">
+                    <label for="herreL" class="radio">l</label>
                 </div>
+
+                <h2>Dame </h2>
+                <div>
+
+                    <input id="dammeS" type="radio" name="trin1" value="d-s">
+                    <label for="dammeS" class="radio">s</label>
+                </div>
+                <div>
+                    <input id="dammeM" type="radio" name="trin1" value="d-m">
+                    <label for="dammeM" class="radio">m</label>
+                </div>
+                <div>
+
+                    <input id="dammeL" type="radio" name="trin1" value="d-l">
+                    <label for="dammeL" class="radio">l</label>
+                </div>
+
+
+
+
             </div>
+
         </div>
         <div class="block2">
             <h1>Vælg Tilbud</h1>
@@ -104,6 +134,119 @@
                 </label>
             </div>
         </div>
+        <div class="block4">
+            <div class="step">
+                <p>TRIN 2/3</p>
+            </div>
+            <h4>Angiv kundeoplysninger</h4>
+            <div>
+                <input type="text" name="full-name" id="full-name" pattern="[a-zA-Z]+( [a-zA-Z] ?)+" placeholder=" "
+                    autocomplete="name" required>
+                <label for="full-name">Fulde navn</label>
+            </div>
+            <div>
+                <input type="number" name="post-nr" id="post-nr" placeholder=" " min="1" max="9999" autocomplete="postal-code"
+                    required>
+                <label for="post-nr">Postnr</label>
+                <span id="by"></span>
+            </div>
+            <div>
+                <input type="text" name="address" id="address" placeholder=" " required>
+                <label for="address">Adresse</label>
+            </div>
+            <p class="explaination">We will send the order comfirmation to your email</p>
+            <p class="explaination">This email address is also your user login on WYPE and Docma</p>
+            <div>
+                <input type="email" name="email" id="email" placeholder=" " autocomplete="email" required>
+                <label for="email">Email</label>
+            </div>
+            <h4>Vælg din betalingsmethod</h4>
+            <div class="pay">
+                <input type="radio" name="payment" id="visa-dankort" value="visa-dankort">
+                <label for="visa-dankort">
+                    <p>Visa/Dankort</p>
+                </label>
+                <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+                    <p class="close">x</p>
+                    <p>
+                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" autocomplete="cc-number"
+                            placeholder="Kortnummer"></p>
+                    <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
+                            class="digit2" pattern="[0-9]{2}" autocomplete="cc-exp-month"><span>
+                            / </span><input type="text" pattern="[0-9]{4}" name="card-exp-year" id="dankort-exp-year"
+                            placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year"></p>
+                    <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
+                            autocomplete="cc-csc" class="digit4"></p>
+                </label>
+            </div>
+            <div class="pay">
+                <input type="radio" name="payment" id="credit-card" value="credit-card">
+                <label for="credit-card">
+                    <p>Kreditkort</p>
+                </label>
+                <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/visa.png" alt="visa logo"><img
+                        src="assets/img/visa-electron.png" alt="visa electron logo"><img src="assets/img/master200px.png"
+                        alt="master logo"><img src="assets/img/Maestro.png" alt="maestro logo">
+                    <p class="close">x</p>
+                    <p>
+                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" placeholder="Kortnummer"
+                            autocomplete="cc-number"></p>
+                    <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
+                            autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}"><span>
+                            / </span><input type="text" name="card-exp-year" id="dankort-exp-year" placeholder="yyyy"
+                            maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}"></p>
+                    <p><input type="nummer" id="control" name="control" placeholder="CVV" autocomplete="cc-csc" class="digit4"></p>
+                </label>
+            </div>
+            <div class="pay">
+                <input type="radio" name="payment" id="mobile-pay" value="mobile-pay">
+                <label for="mobile-pay">
+                    <p>MobilePay</p>
+                </label>
+                <label class="payment-label-around-div half-height" for="mobile-pay-nr"><img src="assets/img/mobilepay.png"
+                        alt="mobilepay logo" id="mobile-pay-img">
+                    <p class="close">x</p>
+                    <p id="mobile-pay-p">
+                        <span>+45</span>
+                        <input type="tel" name="card-nr" id="mobile-pay-nr" pattern="[1-9][0-9]{7}" required>
+                    </p>
+                </label>
+            </div>
+            <div class="pay">
+                <input type="radio" name="payment" id="girokort" value="girokort">
+                <label for="girokort">
+                    <p>Girokort (+10 kr)</p>
+                </label>
+                <label class="payment-label-around-div half-height" for="giri">
+                    <label for="giro-check" id="for-giro">
+                        <input type="checkbox" name="giro-check" id="giro-check">
+                        <span>With giro payment, you will blahblahblahblahblah
+                        </span>
+                    </label>
+                </label>
+            </div>
+            <button type="submit" class="not-active">Gennemfør Køb</button>
+            <div id="mobile-pay-confirm" class="not-active">
+                <div>
+                    <p>></p>
+                </div>
+                <p>Swipe to finish</p>
+            </div>
+        </div>
+        <!-- <div class="block7">
+            <button type="submit">Gå til sikker betaling</button>
+            <div class="info">
+                <ul>
+                    <li>Efter Tilbuddet forsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
+                    <li>Illustreret Videnskab udkommer 18 gange om året.</li>
+                    <li>abonnement betales for 4 numre ad gangen, i alt 315,80 kr (78,95 kr. pr. nummer).</li>
+                </ul>
+            </div>
+        </div> -->
+        <div class="block5">
+            <h1 class="trin">TRIN 3/3</h1>
+            <img class="jacket" src="assets/img/jacket+magazines.png">
+        </div>
         <div class="block6">
             <div class="order-overview">
                 <div class="order-overview-container">
@@ -117,70 +260,14 @@
                 </div>
             </div>
         </div>
-        <div class="block4">
-            <h1>Angiv kundeoplysninger</h1>
-            <div>
-                <label for="fornavn">Fornavn <strong>*</strong></label>
-                <input type="text" id="fornavn" required>
-            </div>
-            <div><label for="efternavn">Efternavn <strong>*</strong></label>
-                <input type="text" id="efternavn">
-            </div>
-            <div><label for="address">Adresse <strong>*</strong></label>
-                <input type="text" id="address">
-            </div>
-            <div><label for="postNrBy">Postnr. & By <strong>*</strong></label>
-                <input type="number" id="post-nr">
-                <input type="text" id="by"> <!-- this will be automaticaly filled in, so no need to label -->
-            </div>
-            <div><label for="email">Email <strong>*</strong></label>
-                <input type="email" id="email">
-            </div>
+        <label class="agreement">
+            <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
+                og acceåteret
+                abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
+        </label>
+        <button class="button" type="submit">Gå til sikker betaling</button>
 
-        </div>
-        <div class="block5">
-            <h1>Vælg betaling</h1>
-            <div class="block5Container">
-                <label for="visa">
-                    <div>
-                        <input type="radio" name="paymentType" value="visa" id="visa" class=""> <span></span>
-                        <span> Visa / Dankort</span>
-                        <img src="assets/img/logo-dankort.png" alt="logo">
-                        <img src="assets/img/logo-fbf.png" alt="logo">
-                    </div>
-                </label>
-                <label for="kreditKort">
-                    <div>
-                        <input type="radio" name="paymentType" value="kreditKort" id="kreditKort" class=""> <span></span>
-                        <span> KreditKort</span>
-                        <img src="assets/img/visa.png" alt="logo">
-                        <img src="assets/img/master200px.png" alt="logo">
-                        <img src="assets/img/visa-electron.png" alt="logo">
-                        <img src="assets/img/Maestro.png" alt="logo">
-                    </div>
-                </label>
-                <label for="mobilePay">
-                    <div>
-                        <input type="radio" name="paymentType" value="mobilePay" id="mobilePay" class=""> <span></span>
-                        <span> MobilePay</span>
-                        <img src="assets/img/mobilepay.png" alt="logo">
-                    </div>
-                </label>
-                <label for="giroKort">
-                    <div>
-                        <input type="radio" name="paymentType" value="giroKort" id="giroKort" class=""> <span></span>
-                        <span> Girokort (+ 15 kr.)</span>
-                    </div>
-                </label>
-                <label>
-                    <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
-                        og acceåteret
-                        abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
-                </label>
-            </div>
-        </div>
         <div class="block7">
-            <button type="submit">Gå til sikker betaling</button>
             <div class="info">
                 <ul>
                     <li>Efter Tilbuddet forsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
@@ -190,7 +277,9 @@
             </div>
         </div>
 
+
     </form>
+    <script src="js/form-yan.js"></script>
     <script src="js/checkout.js"></script>
     <script src="js/block3_laise.js"></script>
 

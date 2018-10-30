@@ -10,20 +10,27 @@ label > div {
   margin-right: auto;
   box-sizing: border-box;
 }
-$bkgColor: rgb(255, 255, 255);
+$bkgColor: #d0d0d0;
 $greenColor: rgb(150, 211, 90);
 $h1Color: hsla(0, 0%, 84%, 1);
 $aGray: hsla(0, 0%, 37%, 1);
 $inputHeigh: 35px;
 
 @mixin h1Setting {
-  background-color: $h1Color;
   width: 100%;
   height: auto;
   padding: 5px 0 5px 0;
   margin: 0;
-  font-size: 1.35em;
   text-align: center;
+}
+@mixin trinSettings {
+  background-color: #000000;
+  border-radius: 3px;
+  color: #ffffff;
+  text-align: center;
+  width: 50%;
+  font-size: 1.4em;
+  margin: 0 auto 0 auto;
 }
 
 @mixin h2Setting {
@@ -67,50 +74,94 @@ body {
   }
   .block1 {
     background-color: $bkgColor;
+    height: 270px;
     h1 {
-      @include h1Setting();
+      @include trinSettings();
     }
-    div {
+    .test1 {
+      width: 100px;
+      height: 10px;
+      background-color: red;
+    }
+    h3 {
+      margin: 8px 0 0 0;
+      font-size: 1em;
+      font-weight: 100;
+    }
+    #sizeContainer {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      position: relative;
-      div {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      width: 290px;
+      height: 160px;
+      margin: 0 auto 0 auto;
+
       img {
-        width: 150px;
-        margin: 0 auto;
-      }
-      div:first-child {
         grid-column: 1/2;
-
-        img {
-          grid-column: 2/3;
-        }
+        grid-row: 1/5;
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        margin: 30px auto 0 auto;
       }
-      div:nth-child(2) {
-        grid-column: 2/3;
-
-        div {
-          grid-column: 2/3;
-          background-color: $greenColor;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          font-size: 3.4em;
-          padding: 0 0 0 4px;
-          color: white;
-          line-height: 40px;
-          text-align: center;
-          margin: 100% 0 0 0;
-        }
+      h2:nth-child(2) {
+        font-size: 1.3em;
+        margin: 0;
+        padding: 5px 0 0 0;
+        grid-column: 2/5;
+        grid-row: 1/2;
+        margin: 0;
       }
       div:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      div:nth-child(4) {
         grid-column: 3/4;
-        img {
-          grid-column: 2/3;
-        }
+      }
+      div:nth-child(5) {
+        grid-column: 4/5;
+      }
+      h2:nth-child(6) {
+        font-size: 1.3em;
+        margin: 0;
+        padding: 5px 0 0 0;
+        grid-column: 2/5;
+        grid-row: 3/4;
+        margin: 0 0 0 0;
+      }
+      div:nth-child(7) {
+        grid-column: 2/3;
+        grid-row: 4/5;
+      }
+      div:nth-child(8) {
+        grid-column: 3/4;
+      }
+      div:nth-child(9) {
+        grid-column: 4/5;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      label {
+        padding: 2px 10px 2px 1.5em;
+        border: 1px solid transparent; /* keeps layout from jumping */
+        width: 48px;
+        height: 48px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        font-weight: bold;
+        padding: 10px 0 0 5px;
+        font-family: Verdana;
+        font-size: 18px;
+        box-shadow: 0px 3px 5px #888888;
+        display: block;
+      }
+      input {
+        position: absolute;
+      }
+      input[type="radio"]:checked + label {
+        border: 2px solid #0077ff;
       }
     }
   }
@@ -200,52 +251,12 @@ body {
     }
   }
   .block4 {
-    height: 350px;
-    background-color: $bkgColor;
-    h1 {
-      @include h1Setting();
-    }
-    div {
-      margin: 11px 0 0 55px;
-      font-size: 0.8em;
-      height: 40px;
-      width: 75%;
-      position: relative;
-
-      label {
-        text-align: center;
-        line-height: $inputHeigh;
-        height: $inputHeigh;
-      }
-
-      input {
-        width: 70%;
-        height: $inputHeigh;
-        float: right;
-        position: absolute;
-        left: 90px;
-      }
-    }
-    div:nth-child(2) {
-      margin-top: 30px;
-    }
-    div:nth-child(5) {
-      input:nth-child(2) {
-        width: 50%;
-        margin-left: 64px;
-        float: right;
-      }
-      input:nth-child(3) {
-        width: 16%;
-        float: left;
-      }
-    }
+    height: auto;
   }
   .block5 {
     h1 {
       @include h1Setting();
     }
-    background-color: $bkgColor;
     .block5Container {
       margin-top: 20px;
       width: 60%;
@@ -265,16 +276,7 @@ body {
     }
   }
   .block6 {
-    padding-bottom: 30px;
-    background-color: $bkgColor;
-    *:not(li) {
-      text-align: center;
-      font-weight: bold;
-    }
     .order-overview-container {
-      padding: 3px;
-      width: 80%;
-      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       h3 {
         color: white;
         background-color: blue;
@@ -285,27 +287,6 @@ body {
       width: 98%;
       background-color: #ddd;
       padding: 15px;
-    }
-  }
-  .block7 {
-    button {
-      width: 80%;
-      margin-top: 30px;
-      position: relative;
-      left: 10%;
-      font-size: 1.35em;
-      color: white;
-      background-color: $greenColor;
-      padding: 11px;
-    }
-    li {
-      width: 90%;
-      position: relative;
-      left: -15px;
-      font-weight: normal;
-      text-align: left;
-      font-size: 0.8em;
-      margin-bottom: 1em;
     }
   }
   footer {

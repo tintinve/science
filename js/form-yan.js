@@ -6,7 +6,7 @@
 
 const form = document.querySelector("form");
 const inputFieldS = document.querySelectorAll(
-  "form>div>input:not([type='radio'])"
+  "div.block4>div>input:not([type='radio'])"
 );
 const paymentBlockElementS = document.querySelectorAll(".pay");
 const mobilePayInput = document.querySelector("#mobile-pay-nr");
@@ -27,12 +27,12 @@ function checkInput(input, i) {
     console.log(validCount);
     if (validCount === inputFieldS.length) {
       // show payment
-      paymentBlockElementS.forEach(e => (e.style.display = "inline-block"));
-      document.querySelector("h1.pay").scrollIntoView({
-        block: "start",
-        inline: "nearest",
-        behavior: "smooth"
-      });
+      //      paymentBlockElementS.forEach(e => (e.style.display = "inline-block"));
+      // document.querySelector("h1.pay").scrollIntoView({
+      //   block: "start",
+      //   inline: "nearest",
+      //   behavior: "smooth"
+      // });
     }
   });
 }
@@ -82,15 +82,43 @@ allPaymentMethodS.forEach(p =>
       p.removeAttribute("class");
       p.nextElementSibling.style.opacity = "1";
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
+      p.parentElement.style.border = "none";
+      p.parentElement.style.height = "50px";
     });
     // add newly checked
     document
       .querySelector('input[name="payment"]:checked')
       .setAttribute("checked", "checked");
-    // hide text label of payment, so that it doesn't overlap with payment icons
+    // add border highlight to checked payment and expand the card/mobile-pay/giro section
     document.querySelector(
-      'input[name="payment"]:checked+label'
-    ).style.opacity = "0";
+      'input[name="payment"]:checked'
+    ).parentElement.style.border = "2px solid blue";
+    if (
+      document.querySelector('input[name="payment"]:checked').value ===
+      "girokort"
+    ) {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "100px";
+    } else if (
+      document.querySelector('input[name="payment"]:checked').value ===
+      "mobile-pay"
+    ) {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "130px";
+    } else {
+      document.querySelector(
+        'input[name="payment"]:checked'
+      ).parentElement.style.height = "200px";
+    }
+    document.querySelector(
+      'input[name="payment"]:checked'
+    ).nextElementSibling.nextElementSibling.style.display = "inherit";
+    // hide text label of payment, so that it doesn't overlap with payment icons
+    // document.querySelector(
+    //   'input[name="payment"]:checked+label'
+    // ).style.opacity = "0";
     // show the selected payment wrapper
     document.querySelector(
       'input[name="payment"]:checked ~ .payment-label-around-div'
