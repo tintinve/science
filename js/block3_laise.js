@@ -1,8 +1,6 @@
 "use strict";
 
-/**
- * show input field based on which payment method is selected
- */
+/** show input field based on which issue method is selected */
 const allsubscriptionBox = document.querySelectorAll(
   '.radio_button input[type="radio"]'
 );
