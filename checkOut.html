@@ -9,6 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/myStyleB.scss">
+    <link rel="stylesheet" href="css/style_block_5-6.css">
     <title>Document</title>
 </head>
 
@@ -99,19 +100,6 @@
                 <p>+ 39,59 kr. i porto og eksp.</p>
             </div>
         </div>
-        <div class="block6">
-            <div class="order-overview">
-                <div class="order-overview-container">
-                    <h3>Bestilling</h3>
-                    <p class="issue-choice"></p>
-                    <p>+</p>
-                    <p class="jacket-choice"></p>
-                    <p>+</p>
-                    <p>39,50 kr. i porto og eksp.</p>
-                    <div class="i-alt">I ALT: <span class="sum"></span> kr.</div>
-                </div>
-            </div>
-        </div>
         <div class="block4">
             <h1>Angiv kundeoplysninger</h1>
             <div>
@@ -131,51 +119,65 @@
             <div><label for="email">Email <strong>*</strong></label>
                 <input type="email" id="email">
             </div>
-
-        </div>
-        <div class="block5">
-            <h1>Vælg betaling</h1>
-            <div class="block5Container">
-                <label for="visa">
-                    <div>
-                        <input type="radio" name="paymentType" value="visa" id="visa" class=""> <span></span>
-                        <span> Visa / Dankort</span>
-                        <img src="assets/img/logo-dankort.png" alt="logo">
-                        <img src="assets/img/logo-fbf.png" alt="logo">
-                    </div>
-                </label>
-                <label for="kreditKort">
-                    <div>
-                        <input type="radio" name="paymentType" value="kreditKort" id="kreditKort" class=""> <span></span>
-                        <span> KreditKort</span>
-                        <img src="assets/img/visa.png" alt="logo">
-                        <img src="assets/img/master200px.png" alt="logo">
-                        <img src="assets/img/visa-electron.png" alt="logo">
-                        <img src="assets/img/Maestro.png" alt="logo">
-                    </div>
-                </label>
-                <label for="mobilePay">
-                    <div>
-                        <input type="radio" name="paymentType" value="mobilePay" id="mobilePay" class=""> <span></span>
-                        <span> MobilePay</span>
-                        <img src="assets/img/mobilepay.png" alt="logo">
-                    </div>
-                </label>
-                <label for="giroKort">
-                    <div>
-                        <input type="radio" name="paymentType" value="giroKort" id="giroKort" class=""> <span></span>
-                        <span> Girokort (+ 15 kr.)</span>
-                    </div>
-                </label>
-                <label>
-                    <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
-                        og acceåteret
-                        abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
-                </label>
+  <div class="block5">
+                <div class="block5Container">
+                    <label for="visa">
+                        <div>
+                            <input type="radio" name="paymentType" value="visa" id="visa" class=""> <span></span>
+                            <span> Visa / Dankort</span>
+                            <img src="assets/img/logo-dankort.png" alt="logo">
+                            <img src="assets/img/logo-fbf.png" alt="logo">
+                        </div>
+                    </label>
+                    <label for="kreditKort">
+                        <div>
+                            <input type="radio" name="paymentType" value="kreditKort" id="kreditKort" class=""> <span></span>
+                            <span> KreditKort</span>
+                            <img src="assets/img/visa.png" alt="logo">
+                            <img src="assets/img/master200px.png" alt="logo">
+                            <img src="assets/img/visa-electron.png" alt="logo">
+                            <img src="assets/img/Maestro.png" alt="logo">
+                        </div>
+                    </label>
+                    <label for="mobilePay">
+                        <div>
+                            <input type="radio" name="paymentType" value="mobilePay" id="mobilePay" class=""> <span></span>
+                            <span> MobilePay</span>
+                            <img src="assets/img/mobilepay.png" alt="logo">
+                        </div>
+                    </label>
+                    <label for="giroKort">
+                        <div>
+                            <input type="radio" name="paymentType" value="giroKort" id="giroKort" class=""> <span></span>
+                            <span> Girokort (+ 15 kr.)</span>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
+        <h1 class="trin">TRIN 3/3</h1>
+        <img class="jacket" src="assets/img/jacket+magazines.png">
+        <div class="block6">
+            <div class="order-overview">
+                <div class="order-overview-container">
+                    <h3>Bestilling</h3>
+                    <p class="issue-choice"></p>
+                    <p>+</p>
+                    <p class="jacket-choice"></p>
+                    <p>+</p>
+                    <p>39,50 kr. i porto og eksp.</p>
+                    <div class="i-alt">I ALT: <span class="sum"></span> kr.</div>
+                </div>
+            </div>
+        </div>
+        <label>
+            <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
+                og acceåteret
+                abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
+        </label>
+        <button class="button" type="submit">Gå til sikker betaling</button>
+
         <div class="block7">
-            <button type="submit">Gå til sikker betaling</button>
             <div class="info">
                 <ul>
                     <li>Efter Tilbuddet forsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
