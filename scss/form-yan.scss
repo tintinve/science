@@ -11,29 +11,55 @@ body {
   position: relative;
   div.block4 {
     width: 80%;
+    background-color: #ccc; // need bg color code
+    padding-bottom: 20px; // need padding setting
     * {
       width: 100%;
     }
+    div.step {
+      height: 40px;
+      background-color: black;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      display: flex;
+      p {
+        align-self: center;
+      }
+    }
+    h4,
+    .explaination {
+      font-weight: normal;
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 0.3em;
+      font-size: 19px; // need font-size, need to decide if h4, need to decide on margin around
+    }
     div {
-      height: 70px;
+      height: 60px;
       margin: 0 auto;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      padding: 0 10%;
       label {
-        font-size: 36px;
+        font-size: 19px;
         position: absolute;
-        top: 0;
+        top: 19px;
+        left: 15%;
         transition: all 0.3s ease-out;
         transform-origin: top left;
-        color: $dark-grey;
+        color: $light-grey;
       }
       input {
         color: $light-grey;
         height: 60px;
         width: 100%;
         border: none;
-        border-bottom: 2px solid $dark-grey;
-        font-size: 30px;
+        border-radius: 5px;
+        background-color: white;
+        padding-top: 5px;
+        padding-left: 5%;
+        font-size: 24px;
         &:focus {
           outline: none;
         }
@@ -42,7 +68,8 @@ body {
         }
         &:focus + label,
         &[class] + label {
-          transform: scale(0.45) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
+          transform-origin: left top;
+          transform: scale(0.6) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
           color: $light-grey;
         }
         &.false + label {
@@ -70,53 +97,48 @@ body {
     }
     .explaination {
       font-size: 12px;
-      position: relative;
-      top: -12px;
       color: $light-grey;
     }
     input[type="radio"] {
       visibility: hidden; // hide radio button, keep label
     }
-    .pay {
-      display: none;
-    }
     div.pay {
-      margin: 0;
-      box-shadow: 2px 2px $light-grey;
-      width: 48%;
-      height: 30vw;
-      margin-bottom: 10px;
+      min-height: 50px;
+      height: auto;
+      width: 80%;
+      margin: 0 auto;
       position: relative;
-      label {
-        font-size: 23px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        padding-top: 10px;
-        text-align: left;
+      margin-bottom: 20px;
+      padding: 0 10%;
+      background-color: white;
+      border-radius: 5px;
+      input[type="radio"] {
+        height: 50px;
+        & ~ .payment-label-around-div {
+          width: 90%;
+          margin-left: 5%;
+        }
       }
-      label#for-giro {
-        padding: 0;
+      label:not(.payment-label-around-div) {
+        color: black; // this should be black?
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 5%;
+        text-align: left;
+        display: flex;
+        p {
+          font-size: 13px;
+          align-self: center;
+        }
       }
       .payment-label-around-div {
-        transform-origin: center center;
-        position: absolute;
-        width: 72vw;
-        height: 42vw;
-        left: calc(1vw - 1px);
-        top: 4vw;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 10px;
-        background-color: white;
-        z-index: 2;
-        text-align: left;
-        transform: scale(0);
-        transition: all 0.3s ease-out;
+        display: none;
+        left: 0;
+        top: 40px;
         p {
-          width: 90%;
+          font-size: 13px;
+          width: 100%;
           height: 40px;
           border-bottom: none;
           &:nth-of-type(2):not(#mobile-pay-p) {
@@ -126,16 +148,17 @@ body {
             // the CVV line, move up and right. temp solution
             width: 4ch;
             position: relative;
-            top: -40px;
+            top: -36px;
             left: 40%;
           }
           input {
             font-size: 18px;
             height: 20px;
             border-bottom: 1px dotted $light-grey;
+            border-radius: 0;
           }
           &#mobile-pay-p input {
-            width: 50%;
+            width: 80%;
             height: 30px;
             font-size: 24px;
             padding: 6px 25px;
@@ -153,21 +176,8 @@ body {
           width: 3ch;
         }
       }
-      .half-height {
-        height: 19vw;
-      }
-      .half-height > p > span {
-        display: inline-block;
-        width: 4ch;
-      }
-      .half-height > p > input {
-        display: inline-block;
-        width: 8ch;
-      }
-    }
-    div.pay:nth-of-type(even) {
-      .payment-label-around-div {
-        left: calc(1vw - 4px - 40vw);
+      input {
+        padding-left: 0;
       }
     }
     div.pay input[type="number"] + label {
@@ -234,13 +244,17 @@ body {
       * {
         align-self: center;
       }
+      span {
+        font-size: 16px;
+      }
     }
     #giro-check {
       width: 30px;
+      display: none;
     }
-    .close {
+    p.close {
       position: absolute;
-      right: 20px;
+      right: 0;
       top: 10px;
       text-align: right;
       cursor: pointer;

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/myStyleB.scss">
     <link rel="stylesheet" href="scss/form-yan.scss">
-
+    <link rel="stylesheet" href="css/style_block_5-6.css">
     <title>Document</title>
 </head>
 
@@ -103,25 +103,15 @@
                 <p>+ 39,59 kr. i porto og eksp.</p>
             </div>
         </div>
-        <div class="block6">
-            <div class="order-overview">
-                <div class="order-overview-container">
-                    <h3>Bestilling</h3>
-                    <p class="issue-choice"></p>
-                    <p>+</p>
-                    <p class="jacket-choice"></p>
-                    <p>+</p>
-                    <p>39,50 kr. i porto og eksp.</p>
-                    <div class="i-alt">I ALT: <span class="sum"></span> kr.</div>
-                </div>
-            </div>
-        </div>
         <div class="block4">
-            <h1>Angiv kundeoplysninger</h1>
+            <div class="step">
+                <p>TRIN 2/3</p>
+            </div>
+            <h4>Angiv kundeoplysninger</h4>
             <div>
-                <input type="text" name="full-name" id="full-name" pattern="[a-zA-Z]+ [a-zA-Z]+" placeholder=" "
+                <input type="text" name="full-name" id="full-name" pattern="[a-zA-Z]+( [a-zA-Z] ?)+" placeholder=" "
                     autocomplete="name" required>
-                <label for="full-name">Navn</label>
+                <label for="full-name">Fulde navn</label>
             </div>
             <div>
                 <input type="number" name="post-nr" id="post-nr" placeholder=" " min="1" max="9999" autocomplete="postal-code"
@@ -139,43 +129,49 @@
                 <input type="email" name="email" id="email" placeholder=" " autocomplete="email" required>
                 <label for="email">Email</label>
             </div>
-            <h1 class="pay">VÆLG BETALINGSMETODE</h1>
+            <h4>Vælg din betalingsmethod</h4>
             <div class="pay">
                 <input type="radio" name="payment" id="visa-dankort" value="visa-dankort">
-                <label for="visa-dankort">Visa/Dankort</label>
+                <label for="visa-dankort">
+                    <p>Visa/Dankort</p>
+                </label>
                 <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
                     <p class="close">x</p>
                     <p>
-                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]*" autocomplete="cc-number"
+                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" autocomplete="cc-number"
                             placeholder="Kortnummer"></p>
                     <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
-                            class="digit2" pattern="[0-9]*" autocomplete="cc-exp-month"><span>
-                            / </span><input type="text" pattern="[0-9]*" name="card-exp-year" id="dankort-exp-year"
+                            class="digit2" pattern="[0-9]{2}" autocomplete="cc-exp-month"><span>
+                            / </span><input type="text" pattern="[0-9]{4}" name="card-exp-year" id="dankort-exp-year"
                             placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year"></p>
-                    <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]*" placeholder="CVV"
+                    <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
                             autocomplete="cc-csc" class="digit4"></p>
                 </label>
             </div>
             <div class="pay">
                 <input type="radio" name="payment" id="credit-card" value="credit-card">
-                <label for="credit-card">Kreditkort</label>
+                <label for="credit-card">
+                    <p>Kreditkort</p>
+                </label>
                 <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/visa.png" alt="visa logo"><img
                         src="assets/img/visa-electron.png" alt="visa electron logo"><img src="assets/img/master200px.png"
                         alt="master logo"><img src="assets/img/Maestro.png" alt="maestro logo">
                     <p class="close">x</p>
                     <p>
-                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]*" placeholder="Kortnummer"
+                        <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" placeholder="Kortnummer"
                             autocomplete="cc-number"></p>
                     <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
-                            autocomplete="cc-exp-month" class="digit2"><span>
+                            autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}"><span>
                             / </span><input type="text" name="card-exp-year" id="dankort-exp-year" placeholder="yyyy"
-                            maxlength="4" autocomplete="cc-exp-year" class="digit4"></p>
+                            maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}"></p>
                     <p><input type="nummer" id="control" name="control" placeholder="CVV" autocomplete="cc-csc" class="digit4"></p>
                 </label>
             </div>
             <div class="pay">
                 <input type="radio" name="payment" id="mobile-pay" value="mobile-pay">
-                <label for="mobile-pay">MobilePay</label>
+                <label for="mobile-pay">
+                    <p>MobilePay</p>
+                </label>
                 <label class="payment-label-around-div half-height" for="mobile-pay-nr"><img src="assets/img/mobilepay.png"
                         alt="mobilepay logo" id="mobile-pay-img">
                     <p class="close">x</p>
@@ -187,7 +183,9 @@
             </div>
             <div class="pay">
                 <input type="radio" name="payment" id="girokort" value="girokort">
-                <label for="girokort">Girokort<br>(+10 kr)</label>
+                <label for="girokort">
+                    <p>Girokort (+10 kr)</p>
+                </label>
                 <label class="payment-label-around-div half-height" for="giri">
                     <label for="giro-check" id="for-giro">
                         <input type="checkbox" name="giro-check" id="giro-check">
@@ -204,7 +202,7 @@
                 <p>Swipe to finish</p>
             </div>
         </div>
-        <div class="block7">
+        <!-- <div class="block7">
             <button type="submit">Gå til sikker betaling</button>
             <div class="info">
                 <ul>
@@ -213,7 +211,41 @@
                     <li>abonnement betales for 4 numre ad gangen, i alt 315,80 kr (78,95 kr. pr. nummer).</li>
                 </ul>
             </div>
+        </div> -->
+        <div class="block5">
+            <h1 class="trin">TRIN 3/3</h1>
+            <img class="jacket" src="assets/img/jacket+magazines.png">
         </div>
+        <div class="block6">
+            <div class="order-overview">
+                <div class="order-overview-container">
+                    <h3>Bestilling</h3>
+                    <p class="issue-choice"></p>
+                    <p>+</p>
+                    <p class="jacket-choice"></p>
+                    <p>+</p>
+                    <p>39,50 kr. i porto og eksp.</p>
+                    <div class="i-alt">I ALT: <span class="sum"></span> kr.</div>
+                </div>
+            </div>
+        </div>
+        <label class="agreement">
+            <input type="checkbox" name="vehicle" value="Bike" required> <span><strong>*</strong> Jeg har læst
+                og acceåteret
+                abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
+        </label>
+        <button class="button" type="submit">Gå til sikker betaling</button>
+
+        <div class="block7">
+            <div class="info">
+                <ul>
+                    <li>Efter Tilbuddet forsætter du i løbende abonnement og kan til enhver tid opsige det.</li>
+                    <li>Illustreret Videnskab udkommer 18 gange om året.</li>
+                    <li>abonnement betales for 4 numre ad gangen, i alt 315,80 kr (78,95 kr. pr. nummer).</li>
+                </ul>
+            </div>
+        </div>
+
 
     </form>
     <script src="js/form-yan.js"></script>
