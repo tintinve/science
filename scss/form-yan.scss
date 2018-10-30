@@ -118,6 +118,7 @@ body {
         }
       }
       label:not(.payment-label-around-div) {
+        transition: none;
         color: black; // this should be black?
         height: 50px;
         position: absolute;
