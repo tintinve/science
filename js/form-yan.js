@@ -8,8 +8,6 @@ const form = document.querySelector("form");
 const inputFieldS = document.querySelectorAll(
   "div.block4>div>input:not([type='radio'])"
 );
-console.log(inputFieldS);
-
 const paymentBlockElementS = document.querySelectorAll(".pay");
 const mobilePayInput = document.querySelector("#mobile-pay-nr");
 const submitButton = document.querySelector('button[type="submit"]');
