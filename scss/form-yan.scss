@@ -11,29 +11,55 @@ body {
   position: relative;
   div.block4 {
     width: 80%;
+    background-color: #ccc; // need bg color code
+    padding-bottom: 20px; // need padding setting
     * {
       width: 100%;
     }
+    div.step {
+      height: 40px;
+      background-color: black;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      display: flex;
+      p {
+        align-self: center;
+      }
+    }
+    h4,
+    .explaination {
+      font-weight: normal;
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 0.3em;
+      font-size: 19px; // need font-size, need to decide if h4, need to decide on margin around
+    }
     div {
-      height: 70px;
+      height: 60px;
       margin: 0 auto;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      padding: 0 10%;
       label {
-        font-size: 36px;
+        font-size: 19px;
         position: absolute;
-        top: 0;
+        top: 19px;
+        left: 15%;
         transition: all 0.3s ease-out;
         transform-origin: top left;
-        color: $dark-grey;
+        color: $light-grey;
       }
       input {
         color: $light-grey;
         height: 60px;
         width: 100%;
         border: none;
-        border-bottom: 2px solid $dark-grey;
-        font-size: 30px;
+        border-radius: 5px;
+        background-color: white;
+        padding-top: 5px;
+        padding-left: 5%;
+        font-size: 24px;
         &:focus {
           outline: none;
         }
@@ -42,7 +68,8 @@ body {
         }
         &:focus + label,
         &[class] + label {
-          transform: scale(0.45) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
+          transform-origin: left top;
+          transform: scale(0.6) translateY(-25px); // -25 is temp solution, move the label up a bit so that it doesn't cover the input field
           color: $light-grey;
         }
         &.false + label {
@@ -70,31 +97,26 @@ body {
     }
     .explaination {
       font-size: 12px;
-      position: relative;
-      top: -12px;
       color: $light-grey;
     }
     input[type="radio"] {
       visibility: hidden; // hide radio button, keep label
     }
-    .pay {
-      display: none;
-    }
     div.pay {
-      margin: 0;
-      box-shadow: 2px 2px $light-grey;
-      width: 48%;
-      height: 30vw;
-      margin-bottom: 10px;
+      height: 50px;
+      width: 80%;
+      margin: 0 auto;
       position: relative;
+      margin-bottom: 20px;
+      padding: 0 10%;
+      background-color: white;
+      border-radius: 5px;
       label {
-        font-size: 23px;
+        color: black; // this should be black?
+        font-size: 13px;
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        padding-top: 10px;
+        top: 17px;
+        left: 5%;
         text-align: left;
       }
       label#for-giro {

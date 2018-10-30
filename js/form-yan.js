@@ -27,12 +27,12 @@ function checkInput(input, i) {
     console.log(validCount);
     if (validCount === inputFieldS.length) {
       // show payment
-      paymentBlockElementS.forEach(e => (e.style.display = "inline-block"));
-      document.querySelector("h1.pay").scrollIntoView({
-        block: "start",
-        inline: "nearest",
-        behavior: "smooth"
-      });
+      //      paymentBlockElementS.forEach(e => (e.style.display = "inline-block"));
+      // document.querySelector("h1.pay").scrollIntoView({
+      //   block: "start",
+      //   inline: "nearest",
+      //   behavior: "smooth"
+      // });
     }
   });
 }
