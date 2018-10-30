@@ -85,15 +85,19 @@ allPaymentMethodS.forEach(p =>
       p.nextElementSibling.style.opacity = "1";
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
       p.parentElement.style.border = "none";
+      p.parentElement.style.height = "50px";
     });
     // add newly checked
     document
       .querySelector('input[name="payment"]:checked')
       .setAttribute("checked", "checked");
-    // add border highlight to checked payment
+    // add border highlight to checked payment and expand the card
     document.querySelector(
       'input[name="payment"]:checked'
     ).parentElement.style.border = "2px solid blue";
+    document.querySelector(
+      'input[name="payment"]:checked'
+    ).parentElement.style.height = "200px";
     // hide text label of payment, so that it doesn't overlap with payment icons
     // document.querySelector(
     //   'input[name="payment"]:checked+label'
