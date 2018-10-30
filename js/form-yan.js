@@ -136,8 +136,9 @@ allPaymentMethodS.forEach(p =>
 const closeXS = document.querySelectorAll(".close");
 closeXS.forEach(x => x.addEventListener("click", closeCard));
 function closeCard(m) {
-  m.target.parentElement.style.transform = "scale(0)";
-  m.target.parentElement.previousElementSibling.style.opacity = "1";
+  //  m.target.parentElement.style.transform = "scale(0)";
+  m.target.parentElement.parentElement.style.height = "50px";
+  m.target.parentElement.style.display = "none";
   m.target.parentElement.parentElement
     .querySelector('input[type="radio"]')
     .removeAttribute("checked");
