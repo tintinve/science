@@ -48,7 +48,7 @@ allsubscriptionBox.forEach(p =>
     // add border highlight to checked issue
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
-    ).parentElement.style.border = "2px solid blue";
+    ).parentElement.style.border = "2px solid #0077ff";
 
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
@@ -169,7 +169,7 @@ allPaymentMethodS.forEach(p =>
     // add border highlight to checked payment and expand the card/mobile-pay/giro section
     document.querySelector(
       'input[name="payment"]:checked'
-    ).parentElement.style.border = "2px solid blue";
+    ).parentElement.style.border = "2px solid #0077ff";
     if (
       document.querySelector('input[name="payment"]:checked').value ===
       "girokort"
