@@ -197,8 +197,10 @@ body {
   .block3 {
     position: relative;
     background-color: $bkgColor;
-    h2 {
-      @include h2Setting();
+    padding: 0 10% 30px;
+    h4 {
+      font-weight: normal;
+      margin-bottom: 0.5em;
     }
     .block3Container {
       font-weight: bold;
@@ -206,27 +208,27 @@ body {
         border-radius: 5px;
         position: relative;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-        width: 80%;
+        width: 100%;
         font-size: 1em;
-        background-color: $bkgColor;
+        background-color: white;
         padding: 0px 0 0 5px;
-        margin: 10px 10% 0 10%;
+        margin-bottom: 10px;
         display: grid;
         grid-template-columns: 0.4fr 0.4fr 0.8fr 2.1fr;
         span {
           align-self: center;
           grid-column: 1/2;
-          font-size: 1.5em;
+          font-size: 30px;
           padding-top: 15px;
         }
         span.x {
           grid-column: 2/3;
-          font-size: 1.1em;
+          font-size: 24px;
         }
         span.prize {
           grid-column: 4/5;
           margin: 0;
-          font-size: 1.1em;
+          font-size: 24px;
         }
         img {
           max-width: 50px;
@@ -302,7 +304,8 @@ body {
 }
 
 .small-font {
-  font-size: 0.7em;
+  font-size: 12px;
+  color: grey; // need to decide
   padding: 0;
   margin: 0;
   font-weight: normal;
