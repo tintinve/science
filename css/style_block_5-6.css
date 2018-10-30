@@ -1,104 +1,114 @@
 body {
-    background-color: #D0D0D0;
-    font-family: sans-serif;
-    margin-left: 10%;
-    margin-right: 10%;
+  background-color: #d0d0d0;
+  font-family: sans-serif;
 }
 
 /* PAYMENT TYPE */
+.block5 {
+  width: 80%;
+}
 
 .block5 h1 {
-    background-color: #000000;
-    border-radius: 5px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 5px;
+  margin: 0;
+  background-color: #000000;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 19px;
+  padding: 5px;
 }
 
 .block5Container img {
-    height: 20px;
-    float: right;
-    padding-right: 3px;
+  height: 20px;
+  float: right;
+  padding-right: 3px;
 }
 
 .block5Container div {
-    background-color: #ffffff;
-    padding: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 visa,
 kreditKort,
 mobilePay,
 giroKort {
-    display: inline-block;
+  display: inline-block;
 }
 
 .block5 input[type="radio"] {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /* ORDER OVERVIEW */
 
 .trin {
-    background-color: #000000;
-    color: #ffffff;
-    text-align: center;
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .jacket {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .block6 {
-    background-color: white;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 15px;
+  width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .block6 h3 {
-    background-color: #0077FF;
-    color: #ffffff;
-    margin: 0;
-    padding: 10px;
-    font-size: 16px;
-    border: solid;
-    border-radius: 5px 5px 0px 0px;
-    border-color: transparent;
+  background-color: #0077ff;
+  color: #ffffff;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  border: solid;
+  border-radius: 5px 5px 0px 0px;
+  border-color: transparent;
 }
 
 .i-alt {
-    background-color: #D0D0D0;
-    margin: 5px;
-    border-radius: 5px;
-    border-color: transparent;
-    padding: 10px;
-    bottom: 5px;
-    position: relative;
+  background-color: #d0d0d0;
+  margin: 5px;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 10px;
+  bottom: 5px;
+  position: relative;
 }
 
 .button {
-    background-color: #40C018;
-    border-radius: 5px;
-    border-color: transparent;
-    color: #ffffff;
-    padding: 10px 32px;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 600;
+  background-color: #40c018;
+  border-radius: 5px;
+  border-color: transparent;
+  color: #ffffff;
+  padding: 10px 32px;
+  text-align: center;
+  cursor: pointer;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 10%;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
+}
+
+.block7,
+.agreement {
+  width: 80%;
+  margin-left: 10%;
 }
