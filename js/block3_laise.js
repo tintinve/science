@@ -1,36 +1,28 @@
-/* "use strict";
+"use strict";
 
-
-
-// when one of the radiobutton/divs have been changed addEventlistener("change")
-// Clear any border color on the radiobuttons/divs
-// find out which div has been changed
-// change bordercolor on the div that has changed
-// If radiobutton changes again remove border on previus and set new (loop)
-
-
-
-
-let selected = document.querySelectorAll(".radio_button");
-selected.addEventListener("click", function() {
-  this.style.border = "5px solid red";
-}); */
-
-/* addEventListener("click", addBorder);
-
-function addBorder() {
-  document.querySelector(".radio_button").style.border = "5px solid red";
-}
+/**
+ * show input field based on which payment method is selected
  */
+const allsubscriptionBox = document.querySelectorAll(
+  '.radio_button input[type="radio"]'
+);
+allsubscriptionBox.forEach(p =>
+  p.addEventListener("click", () => {
+    // remove previously checked
+    allsubscriptionBox.forEach(p => {
+      p.parentElement.style.border = "none";
+    });
+    // add newly checked
+    document
+      .querySelector('input[name="nr-of-issues"]:checked')
+      .setAttribute("checked", "checked");
+    // add border highlight to checked issue
+    document.querySelector(
+      'input[name="nr-of-issues"]:checked'
+    ).parentElement.style.border = "2px solid blue";
 
-//var div = document.getElementById( 'div_id' );
-/* div.onmouseover = function() {
-  this.style.backgroundColor = 'green';
-  var h2s = this.getElementsByTagName( 'h2' );
-  h2s[0].style.backgroundColor = 'blue';
-}; */
-/* 
-if (document.getElementById("2issues").checked) {
-    style.border = "5px solid red";
-}
-console.log(this); */
+    document.querySelector(
+      'input[name="nr-of-issues"]:checked'
+    ).nextElementSibling.nextElementSibling.style.display = "inherit";
+  })
+);
