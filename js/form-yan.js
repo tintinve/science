@@ -192,11 +192,29 @@ allPaymentMethodS.forEach(p =>
     document.querySelector(
       'input[name="payment"]:checked'
     ).nextElementSibling.nextElementSibling.style.display = "inherit";
-    // hide text label of payment, so that it doesn't overlap with payment icons
-    // document.querySelector(
-    //   'input[name="payment"]:checked+label'
-    // ).style.opacity = "0";
-    // show the selected payment wrapper
+    // check card input
+    if (p.value === "girokort") {
+      paymentCheck = true;
+      checkAll();
+    } else {
+      let inputS = p.nextElementSibling.nextElementSibling.querySelectorAll(
+        "p input"
+      );
+      let validCount = 0;
+      inputS.forEach(checkValid);
+      function checkValid(i) {
+        i.addEventListener("input", () => {
+          if (i.validity.valid) {
+            validCount++;
+            if (validCount === inputS.length) {
+              paymentCheck = true;
+              checkAll();
+            }
+          }
+        });
+      }
+    }
+
     document.querySelector(
       'input[name="payment"]:checked ~ .payment-label-around-div'
     ).style.transform = "scale(1)";
@@ -261,7 +279,7 @@ function checkAll() {
   if (
     formCheck === true &&
     choiceCheck === true &&
-    //    paymentCheck === true &&
+    paymentCheck === true &&
     agreementCheck === true
   ) {
     submitButton.classList.add("live");
