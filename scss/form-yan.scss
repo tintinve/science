@@ -31,7 +31,7 @@ body {
     .explaination {
       font-weight: normal;
       width: 80%;
-      margin-left: 10%;
+      margin-left: 0;
       margin-bottom: 0.3em;
       font-size: 19px; // need font-size, need to decide if h4, need to decide on margin around
     }
@@ -40,12 +40,11 @@ body {
       margin: 0 auto;
       position: relative;
       margin-bottom: 10px;
-      padding: 0 10%;
       label {
         font-size: 19px;
         position: absolute;
         top: 19px;
-        left: 15%;
+        left: 5%;
         transition: all 0.3s ease-out;
         transform-origin: top left;
         color: $light-grey;
@@ -105,7 +104,6 @@ body {
     div.pay {
       min-height: 50px;
       height: auto;
-      width: 80%;
       margin: 0 auto;
       position: relative;
       margin-bottom: 20px;
