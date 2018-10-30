@@ -10,7 +10,7 @@ label > div {
   margin-right: auto;
   box-sizing: border-box;
 }
-$bkgColor: rgb(244, 244, 244);
+$bkgColor: #d0d0d0;
 $greenColor: rgb(150, 211, 90);
 $h1Color: hsla(0, 0%, 84%, 1);
 $aGray: hsla(0, 0%, 37%, 1);
@@ -24,6 +24,15 @@ $inputHeigh: 35px;
   margin: 0;
   font-size: 1.35em;
   text-align: center;
+}
+@mixin trinSettings {
+  background-color: #000000;
+  border-radius: 3px;
+  color: #ffffff;
+  text-align: center;
+  width: 50%;
+  font-size: 1.4em;
+  margin: 0 auto 0 auto;
 }
 
 body {
@@ -58,28 +67,84 @@ body {
   }
   .block1 {
     background-color: $bkgColor;
+    height: 270px;
     h1 {
-      @include h1Setting();
+      @include trinSettings();
     }
-    > div {
+    h3 {
+      margin: 2% 0 5% 5%;
+      font-size: 1em;
+      font-weight: 100;
+    }
+    #sizeContainer {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-    > input {
-      display: block;
-    }
-    > p {
-      grid-row: 1/3;
-    }
-    input:nth-of-type(4) {
-      grid-column-start: 2;
-    }
-    input:nth-of-type(5) {
-      grid-column-start: 3;
-    }
-    input:nth-of-type(6) {
-      grid-column-start: 4;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      height: 160px;
+      margin: 5px 50px 30px 50px;
+
+      img {
+        grid-column: 1/2;
+        grid-row: 1/5;
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        margin: 30px auto 0 auto;
+      }
+      h2:nth-child(2) {
+        font-size: 1.3em;
+        margin: 0;
+        padding: 5px 0 0 0;
+        grid-column: 2/5;
+        grid-row: 1/2;
+        margin: 0;
+      }
+      div:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      div:nth-child(4) {
+        grid-column: 3/4;
+      }
+      div:nth-child(5) {
+        grid-column: 4/5;
+      }
+      h2:nth-child(6) {
+        font-size: 1.3em;
+        margin: 0;
+        padding: 5px 0 0 0;
+        grid-column: 2/5;
+        grid-row: 3/4;
+        margin: 0 0 0 0;
+      }
+      div:nth-child(7) {
+        grid-column: 2/3;
+        grid-row: 4/5;
+      }
+      div:nth-child(8) {
+        grid-column: 3/4;
+      }
+      div:nth-child(9) {
+        grid-column: 4/5;
+      }
+      input[type="radio"] {
+        opacity: 1;
+      }
+      div {
+        width: 48px;
+        height: 48px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        font-weight: bold;
+        padding: 10px 0 0 5px;
+        font-family: Verdana;
+        font-size: 18px;
+        box-shadow: 0px 3px 5px #888888;
+        display: block;
+        & > input[type="radio"]:checked + label {
+          color: red;
+        }
+      }
     }
   }
   .block2 {
