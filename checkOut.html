@@ -110,8 +110,8 @@
             </div>
             <h4>Angiv kundeoplysninger</h4>
             <div>
-                <input type="text" name="full-name" id="full-name" pattern="[a-zA-Z]+( [a-zA-Z] ?)+" placeholder=" "
-                    autocomplete="name" required>
+                <input type="text" name="full-name" id="full-name" pattern="([a-zA-Z] ?)+" placeholder=" " autocomplete="name"
+                    required>
                 <label for="full-name">Fulde navn</label>
             </div>
             <div>
@@ -132,7 +132,7 @@
             </div>
             <h4>Vælg din betalingsmethod</h4>
             <div class="pay">
-                <input type="radio" name="payment" id="visa-dankort" value="visa-dankort">
+                <input type="radio" name="payment" id="visa-dankort" value="visa-dankort" required>
                 <label for="visa-dankort">
                     <p>Visa/Dankort</p>
                 </label>
@@ -140,17 +140,17 @@
                     <p class="close">x</p>
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" autocomplete="cc-number"
-                            placeholder="Kortnummer"></p>
+                            placeholder="Kortnummer" required></p>
                     <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
-                            class="digit2" pattern="[0-9]{2}" autocomplete="cc-exp-month"><span>
+                            class="digit2" pattern="[0-9]{2}" autocomplete="cc-exp-month" required><span>
                             / </span><input type="text" pattern="[0-9]{4}" name="card-exp-year" id="dankort-exp-year"
-                            placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year"></p>
+                            placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year" required></p>
                     <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
-                            autocomplete="cc-csc" class="digit4"></p>
+                            autocomplete="cc-csc" class="digit4" required></p>
                 </label>
             </div>
             <div class="pay">
-                <input type="radio" name="payment" id="credit-card" value="credit-card">
+                <input type="radio" name="payment" id="credit-card" value="credit-card" required>
                 <label for="credit-card">
                     <p>Kreditkort</p>
                 </label>
@@ -160,16 +160,17 @@
                     <p class="close">x</p>
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" placeholder="Kortnummer"
-                            autocomplete="cc-number"></p>
+                            autocomplete="cc-number" required></p>
                     <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
-                            autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}"><span>
+                            autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}" required><span>
                             / </span><input type="text" name="card-exp-year" id="dankort-exp-year" placeholder="yyyy"
-                            maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}"></p>
-                    <p><input type="nummer" id="control" name="control" placeholder="CVV" autocomplete="cc-csc" class="digit4"></p>
+                            maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}" required></p>
+                    <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
+                            autocomplete="cc-csc" class="digit4" required></p>
                 </label>
             </div>
             <div class="pay">
-                <input type="radio" name="payment" id="mobile-pay" value="mobile-pay">
+                <input type="radio" name="payment" id="mobile-pay" value="mobile-pay" required>
                 <label for="mobile-pay">
                     <p>MobilePay</p>
                 </label>
@@ -183,7 +184,7 @@
                 </label>
             </div>
             <div class="pay">
-                <input type="radio" name="payment" id="girokort" value="girokort">
+                <input type="radio" name="payment" id="girokort" value="girokort" required>
                 <label for="girokort">
                     <p>Girokort (+10 kr)</p>
                 </label>
@@ -210,7 +211,9 @@
             <div class="order-overview">
                 <div class="order-overview-container">
                     <h3>Bestilling Oversigt</h3>
-                    <p class="jacket-choice"></p>
+                    <p class="jacket-choice">Which jacket?</p>
+                    <p>+</p>
+                    <p class="issue-choice">How many magazines?</p>
                     <p>+</p>
                     <p class="issue-choice"></p>
                     <p>+</p>
