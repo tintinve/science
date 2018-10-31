@@ -280,8 +280,10 @@ agreement.addEventListener("change", checkAgreement);
 function checkAgreement() {
   if (agreement.checked) {
     agreementCheck = true;
-    checkAll();
+  } else {
+    agreementCheck = false;
   }
+  checkAll();
 }
 /**
  * show button when everything is set
@@ -296,6 +298,9 @@ function checkAll() {
   ) {
     submitButton.classList.add("live");
     mobilePaySubmit.classList.add("live");
+  } else {
+    submitButton.classList.remove("live");
+    mobilePaySubmit.classList.remove("live");
   }
 }
 
