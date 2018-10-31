@@ -30,10 +30,10 @@ body {
     h4,
     .explaination {
       font-weight: normal;
-      width: 80%;
+      width: 90%;
       margin-left: 0;
       margin-bottom: 0.3em;
-      font-size: 24px;
+      font-size: 18px;
     }
     div {
       height: 60px;
@@ -41,7 +41,7 @@ body {
       position: relative;
       margin-bottom: 10px;
       label {
-        font-size: 19px;
+        font-size: 18px;
         position: absolute;
         top: 19px;
         left: 5%;
@@ -58,7 +58,7 @@ body {
         background-color: white;
         padding-top: 5px;
         padding-left: 5%;
-        font-size: 24px;
+        font-size: 18px;
         &:focus {
           outline: none;
         }
@@ -127,7 +127,7 @@ body {
         text-align: left;
         display: flex;
         p {
-          font-size: 13px;
+          font-size: 16px;
           align-self: center;
         }
       }
@@ -151,7 +151,7 @@ body {
             left: 40%;
           }
           input {
-            font-size: 18px;
+            font-size: 16px;
             height: 20px;
             border-bottom: 1px dotted $light-grey;
             border-radius: 0;

@@ -14,13 +14,13 @@ $bkgColor: #d0d0d0;
 $greenColor: rgb(150, 211, 90);
 $h1Color: hsla(0, 0%, 84%, 1);
 $aGray: hsla(0, 0%, 37%, 1);
+$blue: #0077ff;
 $inputHeigh: 35px;
 
 @mixin h1Setting {
   width: 100%;
   height: auto;
   padding: 5px 0 5px 0;
-  margin: 0;
   text-align: center;
 }
 @mixin trinSettings {
@@ -30,7 +30,7 @@ $inputHeigh: 35px;
   text-align: center;
   width: 80%;
   font-size: 19px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 3% auto;
 }
 
 @mixin h2Setting {
@@ -38,36 +38,40 @@ $inputHeigh: 35px;
   height: auto;
   padding: 5px 0 5px 0;
   margin: 0 0 0 50px;
-  font-size: 1em;
+  font-size: 18px;
   text-align: left;
 }
 
 body {
   width: 100vw;
   header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    background-color: #ffffff;
     p {
       color: $greenColor;
-      font-size: 2.1em;
+      font-size: 1.5em;
       margin: 0 0 0 10px;
       float: left;
+      margin: 10% 0 0 16%;
     }
     img {
       width: 125px;
-      margin: 7px 0px 8px 15px;
+      margin: 18px 0px 8px 15px;
     }
-    hr {
-      margin: 0;
+    div {
+      grid-column: 3/4;
     }
     ul {
       display: inline-block;
       padding-left: 10%;
+      margin-top: 8%;
       li {
-        font-size: 0.7em;
-        text-align: center;
+        font-size: 0.52em;
         display: block;
         float: left;
         list-style-type: none;
-        margin: 0 20px 0 0;
+        margin: 0;
         color: $greenColor;
         font-weight: bold;
       }
@@ -76,7 +80,10 @@ body {
   .block1 {
     background-color: $bkgColor;
     height: 270px;
+    margin-top: 5%;
+
     h1 {
+      @include h1Setting();
       @include trinSettings();
       padding: 5px 0 5px 0;
     }
@@ -87,7 +94,7 @@ body {
     }
     h4 {
       margin-left: 10%;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: normal;
     }
     #sizeContainer {
@@ -107,7 +114,7 @@ body {
         margin: 30px auto 0 auto;
       }
       h2:nth-child(2) {
-        font-size: 1.3em;
+        font-size: 18px;
         margin: 0;
         padding: 5px 0 0 0;
         grid-column: 2/5;
@@ -125,7 +132,7 @@ body {
         grid-column: 4/5;
       }
       h2:nth-child(6) {
-        font-size: 1.3em;
+        font-size: 18px;
         margin: 0;
         padding: 5px 0 0 0;
         grid-column: 2/5;
@@ -158,6 +165,7 @@ body {
         font-size: 18px;
         box-shadow: 0px 3px 5px #888888;
         display: block;
+        text-align: center;
       }
       input {
         position: absolute;
@@ -203,6 +211,7 @@ body {
     h4 {
       font-weight: normal;
       margin-bottom: 0.5em;
+      font-size: 18px;
     }
     .block3Container {
       font-weight: bold;
@@ -220,17 +229,17 @@ body {
         span {
           align-self: center;
           grid-column: 1/2;
-          font-size: 30px;
+          font-size: 25px;
           padding-top: 15px;
         }
         span.x {
           grid-column: 2/3;
-          font-size: 24px;
+          font-size: 18px;
         }
         span.prize {
           grid-column: 4/5;
           margin: 0;
-          font-size: 24px;
+          font-size: 18px;
         }
         img {
           max-width: 50px;
@@ -259,6 +268,7 @@ body {
   }
   .block5 {
     h1 {
+      @include trinSettings();
       @include h1Setting();
     }
     .block5Container {

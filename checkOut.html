@@ -20,7 +20,6 @@
         <header>
             <p>&#9776;</p>
             <img src="assets/img/logo.png" alt="">
-            <hr>
             <div>
                 <ul>
                     <li>&#10004;14 dages fortrydelsesret</li>
@@ -36,31 +35,31 @@
                 <h2>Herre </h2>
                 <div>
                     <input id="herreS" type="radio" name="trin1" value="h-s">
-                    <label for="herreS" class="radio">s</label>
+                    <label for="herreS" class="radio">S</label>
                 </div>
                 <div>
                     <input id="herreM" type="radio" name="trin1" value="h-m">
-                    <label for="herreM" class="radio">m</label>
+                    <label for="herreM" class="radio">M</label>
                 </div>
                 <div>
                     <input id="herreL" type="radio" name="trin1" value="h-l">
-                    <label for="herreL" class="radio">l</label>
+                    <label for="herreL" class="radio">L</label>
                 </div>
 
                 <h2>Dame </h2>
                 <div>
 
                     <input id="dammeS" type="radio" name="trin1" value="d-s">
-                    <label for="dammeS" class="radio">s</label>
+                    <label for="dammeS" class="radio">S</label>
                 </div>
                 <div>
                     <input id="dammeM" type="radio" name="trin1" value="d-m">
-                    <label for="dammeM" class="radio">m</label>
+                    <label for="dammeM" class="radio">M</label>
                 </div>
                 <div>
 
                     <input id="dammeL" type="radio" name="trin1" value="d-l">
-                    <label for="dammeL" class="radio">l</label>
+                    <label for="dammeL" class="radio">L</label>
                 </div>
 
 
@@ -122,18 +121,19 @@
                 <input type="text" name="address" id="address" placeholder=" " required>
                 <label for="address">Adresse</label>
             </div>
-            <p class="explaination">We will send the order comfirmation to your email</p>
-            <p class="explaination">This email address is also your user login on WYPE and Docma</p>
+            <p class="explaination">Vi sender bekæftelsen på denne mail</p>
+            <p class="explaination">Din email bliver også brugt som login på WYPE og Docma</p>
             <div>
                 <input type="email" name="email" id="email" placeholder=" " autocomplete="email" required>
                 <label for="email">Email</label>
             </div>
-            <h4>Vælg betalingsmethod</h4>
+            <h4>Vælg betalingsmetode</h4>
             <div class="pay">
                 <input type="radio" name="payment" id="visa-dankort" value="visa-dankort" required>
                 <label for="visa-dankort">
                     <p>Visa/Dankort</p>
                 </label>
+
                 <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
                     <p class="close">x</p>
                     <p>
@@ -189,7 +189,7 @@
                 <label class="payment-label-around-div half-height" for="giri">
                     <label for="giro-check" id="for-giro">
                         <input type="checkbox" name="giro-check" id="giro-check">
-                        <span>With giro payment, you will blahblahblahblahblah
+                        <span>OBS! Betal med kort, og få velkomstpakken hurtigere.
                         </span>
                     </label>
                 </label>
@@ -208,13 +208,13 @@
         <div class="block6">
             <div class="order-overview">
                 <div class="order-overview-container">
-                    <h3>Bestilling Oversigt</h3>
-                    <p class="jacket-choice">Which jacket?</p>
+                    <h3>Din bestilling</h3>
+                    <p class="jacket-choice">Hvilken jakke vælger du?</p>
                     <p>+</p>
-                    <p class="issue-choice">How many magazines?</p>
+                    <p class="issue-choice">Hvor mange blade vil du have?</p>
                     <p>+</p>
                     <p>39,50 kr. i porto og eksp.</p>
-                    <p class="grey-out">total saving: XXXXX</p>
+                    <!-- <p class="grey-out">Du sparer: XXXXX</p> -->
                     <div class="i-alt">I ALT: <span class="sum"></span></div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
             <label class="agreement" for="agreement">
                 <input type="checkbox" name="vehicle" required id="agreement"> <span><strong>*</strong>
                     Jeg har læst
-                    og acceåteret
+                    og accepteret
                     abonnementsbetingelserne.<a href=""> Læs mere.</a></span>
             </label>
             <button class="button" type="submit">Gennemfør Køb</button>

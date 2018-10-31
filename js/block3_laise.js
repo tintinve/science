@@ -20,7 +20,7 @@ allsubscriptionBox.forEach(p =>
     // add border highlight to checked issue
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
-    ).parentElement.style.border = "2px solid blue";
+    ).parentElement.style.border = "2px solid #0077ff";
 
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
