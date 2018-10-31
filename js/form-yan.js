@@ -263,11 +263,18 @@ function checkPaymentChoice() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
       submitButton.style.display = "none";
+      checkAll();
     } else if (
       paymentChoice[0].id === "mobile-pay" &&
       !mobilePayInput.validity.valid
     ) {
+      mobilePaySubmit.classList.remove("not-active");
+      submitButton.style.display = "none";
       mobilePaySubmit.classList.remove("live");
+    } else if (paymentChoice[0].id !== "mobile-pay") {
+      mobilePaySubmit.classList.add("not-active");
+      submitButton.style.display = "inherit";
+      checkAll();
     }
   }
 }
@@ -290,17 +297,29 @@ function checkAgreement() {
  */
 checkAll();
 function checkAll() {
-  if (
-    formCheck === true &&
-    choiceCheck === true &&
-    paymentCheck === true &&
-    agreementCheck === true
-  ) {
-    submitButton.classList.add("live");
-    mobilePaySubmit.classList.add("live");
-  } else {
-    submitButton.classList.remove("live");
-    mobilePaySubmit.classList.remove("live");
+  for (let i = 0; i < form.elements.length; i++) {
+    console.log(i + ": " + form.elements[i].value);
+    // 9-12 are input user info
+    // 14-17 are visa/dankort
+    // 19-22 are credit card
+    // 24 is mobilepay
+    // 25 is giro
+    if (
+      formCheck === true &&
+      choiceCheck === true &&
+      paymentCheck === true &&
+      agreementCheck === true &&
+      form.elements[9].value &&
+      form.elements[10].value &&
+      form.elements[11].value &&
+      form.elements[12].value
+    ) {
+      submitButton.classList.add("live");
+      mobilePaySubmit.classList.add("live");
+    } else {
+      submitButton.classList.remove("live");
+      mobilePaySubmit.classList.remove("live");
+    }
   }
 }
 
