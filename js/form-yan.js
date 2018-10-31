@@ -165,7 +165,7 @@ allPaymentMethodS.forEach(p =>
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
       p.parentElement.style.border = "none";
       p.nextElementSibling.style.backgroundColor = "white";
-      p.parentElement.style.height = "50px";
+      p.parentElement.style.height = "46px";
     });
     // add newly checked
     document
@@ -235,14 +235,14 @@ const closeXS = document.querySelectorAll(".close");
 closeXS.forEach(x => x.addEventListener("click", closeCard));
 function closeCard(m) {
   //  m.target.parentElement.style.transform = "scale(0)";
-  m.target.parentElement.parentElement.style.height = "50px";
+  m.target.parentElement.parentElement.style.height = "46px";
   m.target.parentElement.style.display = "none";
   m.target.parentElement.parentElement
     .querySelector('input[type="radio"]')
     .removeAttribute("checked");
   mobilePayInput.value = "";
   mobilePaySubmit.className = "not-active";
-  submitButton.className = "not-active";
+  submitButton.classList.add("not-active");
 }
 
 /**
