@@ -103,6 +103,7 @@ body {
     }
     div.pay {
       min-height: 50px;
+      overflow: hidden;
       height: auto;
       margin: 0 auto;
       position: relative;
@@ -123,7 +124,8 @@ body {
         height: 50px;
         position: absolute;
         top: 0;
-        left: 5%;
+        left: 0;
+        padding-left: 5%;
         text-align: left;
         display: flex;
         p {
@@ -134,7 +136,7 @@ body {
       .payment-label-around-div {
         display: none;
         left: 0;
-        top: 40px;
+        top: 70px;
         p {
           font-size: 13px;
           width: 100%;
@@ -191,9 +193,15 @@ body {
     // div.pay input[type="radio"]:checked ~ input[type="number"] + label {
     //   display: inherit;
     // }
+    div.pay span.imgs {
+      position: absolute;
+      text-align: right;
+      right: 3%;
+      top: 7px;
+    }
     div.pay img {
-      width: 50px;
-      margin-right: 4px;
+      width: 40px;
+      margin-right: 3px;
       vertical-align: middle;
     }
     img#mobile-pay-img {

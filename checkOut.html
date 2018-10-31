@@ -131,10 +131,10 @@
             <div class="pay">
                 <input type="radio" name="payment" id="visa-dankort" value="visa-dankort" required>
                 <label for="visa-dankort">
-                    <p>Visa/Dankort</p>
+                    <p>Visa/Dankort</p><span class="imgs"><img src="assets/img/logo-dankort.png" alt="dankort logo"></span>
                 </label>
 
-                <label class="payment-label-around-div" for="dankort-nr"><img src="assets/img/logo-dankort.png" alt="dankort logo">
+                <label class="payment-label-around-div" for="dankort-nr">
                     <p class="close">x</p>
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" autocomplete="cc-number"
@@ -150,11 +150,11 @@
             <div class="pay">
                 <input type="radio" name="payment" id="credit-card" value="credit-card" required>
                 <label for="credit-card">
-                    <p>Kreditkort</p>
+                    <p>Kreditkort</p><span class="imgs"><img src="assets/img/visa.png" alt="visa logo"><img src="assets/img/visa-electron.png"
+                            alt="visa electron logo"><img src="assets/img/master200px.png" alt="master logo"><img src="assets/img/Maestro.png"
+                            alt="maestro logo"></span>
                 </label>
-                <label class="payment-label-around-div" for="credit-card-nr"><img src="assets/img/visa.png" alt="visa logo"><img
-                        src="assets/img/visa-electron.png" alt="visa electron logo"><img src="assets/img/master200px.png"
-                        alt="master logo"><img src="assets/img/Maestro.png" alt="maestro logo">
+                <label class="payment-label-around-div" for="credit-card-nr">
                     <p class="close">x</p>
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" placeholder="Kortnummer"
@@ -170,10 +170,9 @@
             <div class="pay">
                 <input type="radio" name="payment" id="mobile-pay" value="mobile-pay" required>
                 <label for="mobile-pay">
-                    <p>MobilePay</p>
+                    <p>MobilePay</p><span class="imgs"><img src="assets/img/mobilepay.png" alt="mobilepay logo" id="mobile-pay-img"></span>
                 </label>
-                <label class="payment-label-around-div half-height" for="mobile-pay-nr"><img src="assets/img/mobilepay.png"
-                        alt="mobilepay logo" id="mobile-pay-img">
+                <label class="payment-label-around-div half-height" for="mobile-pay-nr">
                     <p class="close">x</p>
                     <p id="mobile-pay-p">
                         <span>+45</span>
