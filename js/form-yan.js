@@ -251,13 +251,17 @@ function closeCard(m) {
 const paymentS = document.querySelectorAll('input[name="payment"]');
 paymentS.forEach(p => p.addEventListener("change", checkPaymentChoice));
 function checkPaymentChoice() {
+  submitButton.style.display = "inherit";
+  mobilePaySubmit.classList.add("not-active");
   let paymentChoice = document.querySelectorAll(
     'input[name="payment"][checked]'
   );
+  checkMobilePay();
   mobilePayInput.addEventListener("input", checkMobilePay);
   function checkMobilePay() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
+      submitButton.style.display = "none";
       window.scrollTo(0, 270);
     }
   }
