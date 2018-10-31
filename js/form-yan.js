@@ -263,7 +263,11 @@ function checkPaymentChoice() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
       submitButton.style.display = "none";
-      window.scrollTo(0, 270);
+    } else if (
+      paymentChoice[0].id === "mobile-pay" &&
+      !mobilePayInput.validity.valid
+    ) {
+      mobilePaySubmit.classList.remove("live");
     }
   }
 }
@@ -291,6 +295,7 @@ function checkAll() {
     agreementCheck === true
   ) {
     submitButton.classList.add("live");
+    mobilePaySubmit.classList.add("live");
   }
 }
 

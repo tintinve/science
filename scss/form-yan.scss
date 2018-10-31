@@ -243,6 +243,7 @@ body {
     display: none;
   }
   #mobile-pay-confirm {
+    filter: grayscale(0.7);
     width: 100%;
     height: 60px;
     border-radius: 34px;
@@ -250,6 +251,9 @@ body {
     background-color: #596aa3;
     position: relative;
     display: flex;
+  }
+  #mobile-pay-confirm.live {
+    filter: grayscale(0);
   }
   #mobile-pay-confirm div {
     height: 56px;
