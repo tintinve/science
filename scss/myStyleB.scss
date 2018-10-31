@@ -172,6 +172,7 @@ body {
       }
       input[type="radio"]:checked + label {
         border: 2px solid #0077ff;
+        background-color: lightblue;
       }
     }
   }

@@ -39,6 +39,7 @@ allsubscriptionBox.forEach(p =>
     // remove previously checked
     allsubscriptionBox.forEach(p => {
       p.parentElement.style.border = "none";
+      p.parentElement.style.backgroundColor = "white";
       p.removeAttribute("checked");
     });
     // add newly checked
@@ -49,6 +50,9 @@ allsubscriptionBox.forEach(p =>
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
     ).parentElement.style.border = "2px solid #0077ff";
+    document.querySelector(
+      'input[name="nr-of-issues"]:checked'
+    ).parentElement.style.backgroundColor = "lightblue";
 
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
@@ -160,7 +164,8 @@ allPaymentMethodS.forEach(p =>
       p.nextElementSibling.style.opacity = "1";
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
       p.parentElement.style.border = "none";
-      p.parentElement.style.height = "50px";
+      p.nextElementSibling.style.backgroundColor = "white";
+      p.parentElement.style.height = "46px";
     });
     // add newly checked
     document
@@ -170,16 +175,14 @@ allPaymentMethodS.forEach(p =>
     document.querySelector(
       'input[name="payment"]:checked'
     ).parentElement.style.border = "2px solid #0077ff";
+    document.querySelector(
+      'input[name="payment"]:checked'
+    ).nextElementSibling.style.backgroundColor = "lightblue";
     if (
       document.querySelector('input[name="payment"]:checked').value ===
-      "girokort"
-    ) {
-      document.querySelector(
-        'input[name="payment"]:checked'
-      ).parentElement.style.height = "100px";
-    } else if (
+        "girokort" ||
       document.querySelector('input[name="payment"]:checked').value ===
-      "mobile-pay"
+        "mobile-pay"
     ) {
       document.querySelector(
         'input[name="payment"]:checked'
@@ -232,14 +235,14 @@ const closeXS = document.querySelectorAll(".close");
 closeXS.forEach(x => x.addEventListener("click", closeCard));
 function closeCard(m) {
   //  m.target.parentElement.style.transform = "scale(0)";
-  m.target.parentElement.parentElement.style.height = "50px";
+  m.target.parentElement.parentElement.style.height = "46px";
   m.target.parentElement.style.display = "none";
   m.target.parentElement.parentElement
     .querySelector('input[type="radio"]')
     .removeAttribute("checked");
   mobilePayInput.value = "";
   mobilePaySubmit.className = "not-active";
-  submitButton.className = "not-active";
+  submitButton.classList.add("not-active");
 }
 
 /**
