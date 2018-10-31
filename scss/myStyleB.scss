@@ -43,6 +43,11 @@ $inputHeigh: 35px;
 }
 
 body {
+  h1 {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
   width: 100vw;
   header {
     display: grid;
@@ -77,16 +82,16 @@ body {
       }
     }
   }
+  h1 {
+    @include h1Setting();
+    @include trinSettings();
+    padding: 5px 0 5px 0;
+  }
   .block1 {
     background-color: $bkgColor;
     height: 270px;
     margin-top: 5%;
 
-    h1 {
-      @include h1Setting();
-      @include trinSettings();
-      padding: 5px 0 5px 0;
-    }
     .test1 {
       width: 100px;
       height: 10px;
@@ -209,6 +214,9 @@ body {
     position: relative;
     background-color: $bkgColor;
     padding: 0 10% 30px;
+    h1 {
+      width: 100%;
+    }
     h4 {
       font-weight: normal;
       margin-bottom: 0.5em;
