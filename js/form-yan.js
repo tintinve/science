@@ -80,6 +80,7 @@ allsubscriptionBox.forEach(p =>
       document.querySelector(".i-alt").textContent =
         "I Alt: " + sumStringWithComma + " kr.";
     }
+    checkAll();
   })
 );
 
