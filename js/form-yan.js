@@ -98,7 +98,8 @@ const submitButton = document.querySelector('button[type="submit"]');
 const mobilePaySubmit = document.querySelector("#mobile-pay-confirm");
 
 let formCheck = false;
-let paymentCheck = false;
+let paymentCheck = [];
+let chosenPayment;
 let agreementCheck = false;
 
 inputFieldS.forEach(checkInput);
@@ -156,8 +157,9 @@ function getDataBasedonPostNr() {
  * show input field based on which payment method is selected
  */
 const allPaymentMethodS = document.querySelectorAll('.pay input[type="radio"]');
-allPaymentMethodS.forEach(p =>
+allPaymentMethodS.forEach((p, pi) =>
   p.addEventListener("click", () => {
+    chosenPayment = pi;
     // remove previously checked
     allPaymentMethodS.forEach(p => {
       p.removeAttribute("checked");
@@ -198,22 +200,28 @@ allPaymentMethodS.forEach(p =>
     ).nextElementSibling.nextElementSibling.style.display = "inherit";
     // check card input
     if (p.value === "girokort") {
-      paymentCheck = true;
+      paymentCheck[3] = true;
       checkAll();
     } else {
       let inputS = p.nextElementSibling.nextElementSibling.querySelectorAll(
         "p input"
       );
       let validCount = 0;
+      let countSofar;
       inputS.forEach(checkValid);
       function checkValid(i) {
         i.addEventListener("input", () => {
           if (i.validity.valid) {
             validCount++;
-            if (validCount === inputS.length) {
-              paymentCheck = true;
+            countSofar++;
+            if (validCount === inputS.length || countSofar === inputS.length) {
+              paymentCheck[pi] = true;
               checkAll();
             }
+          } else {
+            countSofar = validCount;
+            countSofar--;
+            checkAll();
           }
         });
       }
@@ -263,6 +271,7 @@ function checkPaymentChoice() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
       submitButton.style.display = "none";
+      paymentCheck[2] = true;
       checkAll();
     } else if (
       paymentChoice[0].id === "mobile-pay" &&
@@ -297,8 +306,9 @@ function checkAgreement() {
  */
 checkAll();
 function checkAll() {
+  console.log(paymentCheck);
   for (let i = 0; i < form.elements.length; i++) {
-    console.log(i + ": " + form.elements[i].value);
+    //    console.log(i + ": " + form.elements[i].value);
     // 9-12 are input user info
     // 14-17 are visa/dankort
     // 19-22 are credit card
@@ -307,7 +317,7 @@ function checkAll() {
     if (
       formCheck === true &&
       choiceCheck === true &&
-      paymentCheck === true &&
+      paymentCheck[chosenPayment] === true &&
       agreementCheck === true &&
       form.elements[9].value &&
       form.elements[10].value &&
