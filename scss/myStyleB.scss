@@ -278,47 +278,53 @@ body {
       @include trinSettings();
       @include h1Setting();
     }
-    .block5Container {
-      margin-top: 20px;
-      width: 60%;
-      div {
-        height: $inputHeigh;
-        margin: 10px 0 15px 0;
-        line-height: $inputHeigh;
-        background-color: white;
-        border: $h1Color solid 1px;
-      }
-      img {
-        width: 50px;
-        height: 29px;
-        float: right;
-        margin: 0 10px 0 0;
-      }
+    img {
+      width: 255px;
+      display: block;
+      margin: 0 auto 0 auto;
     }
   }
   .block6 {
+    .order-overview {
+      background-color: $bkgColor;
+    }
     .order-overview-container {
-      h3 {
-        color: white;
-        background-color: #0077ff;
-        padding: 7px;
-      }
-      p {
-        font-size: 16px;
-        margin: 0.5em 0;
-        &:nth-of-type(1),
-        &:nth-of-type(3) {
+      background-image: url(/assets/img/receipt1.svg);
+      background-repeat: no-repeat;
+
+      background-size: 60%;
+      background-position: center;
+      height: 250px;
+      div {
+        background-color: transparent;
+        width: 270px;
+        h3 {
+          background-color: transparent;
+          color: black;
+          padding: 7px;
+          text-align: center;
+          padding: 0 0 19px 9px;
+          font-size: 0.7em;
+        }
+        p {
+          font-size: 16px;
+          text-align: left;
+          margin: 0 0 0 10px;
+          &:nth-of-type(1),
+          &:nth-of-type(3) {
+            font-weight: bold;
+          }
+        }
+        .i-alt {
+          width: 97%;
+          font-size: 19px;
           font-weight: bold;
+          background-color: transparent;
+          padding: 5px;
+          margin: 15px auto;
+          text-align: center;
         }
       }
-    }
-    .i-alt {
-      width: 97%;
-      font-size: 19px;
-      font-weight: bold;
-      background-color: #ddd;
-      padding: 5px;
-      margin: 15px auto;
     }
   }
   .block7 {

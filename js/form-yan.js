@@ -189,11 +189,11 @@ allPaymentMethodS.forEach((p, pi) =>
     ) {
       document.querySelector(
         'input[name="payment"]:checked'
-      ).parentElement.style.height = "130px";
+      ).parentElement.style.height = "140px";
     } else {
       document.querySelector(
         'input[name="payment"]:checked'
-      ).parentElement.style.height = "200px";
+      ).parentElement.style.height = "210px";
     }
     document.querySelector(
       'input[name="payment"]:checked'

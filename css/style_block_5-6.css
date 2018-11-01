@@ -39,59 +39,7 @@ giroKort {
   display: inline-block;
 }
 
-.block5 input[type="radio"] {
-  visibility: hidden;
-}
-
 /* ORDER OVERVIEW */
-
-.trin {
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.jacket {
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.block6 {
-  width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.block6 h3 {
-  background-color: #0077ff;
-  color: #ffffff;
-  margin: 0;
-  padding: 10px;
-  font-size: 16px;
-  border: solid;
-  border-radius: 5px 5px 0px 0px;
-  border-color: transparent;
-}
-
-.i-alt {
-  background-color: #d0d0d0;
-  margin: 5px;
-  border-radius: 5px;
-  border-color: transparent;
-  padding: 10px;
-  bottom: 5px;
-  position: relative;
-}
-
-ul {
-  padding: 0;
-}
 
 .block7,
 .agreement {
