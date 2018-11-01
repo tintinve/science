@@ -107,8 +107,8 @@ body {
       visibility: hidden; // hide radio button, keep label
     }
     div.pay {
-      min-height: 50px;
-      height: auto;
+      overflow: hidden;
+      height: 46px;
       margin: 0 auto;
       position: relative;
       margin-bottom: 20px;
@@ -128,7 +128,8 @@ body {
         height: 50px;
         position: absolute;
         top: 0;
-        left: 5%;
+        left: 0;
+        padding-left: 5%;
         text-align: left;
         display: flex;
         p {
@@ -139,15 +140,21 @@ body {
       .payment-label-around-div {
         display: none;
         left: 0;
-        top: 40px;
+        top: 70px;
         p {
           font-size: 24px;
           width: 100%;
-          height: 40px;
+          height: 30px;
           border-bottom: none;
           font-weight: 100;
+          &:nth-of-type(1):not(#mobile-pay-p) {
+            margin-top: 20px;
+          }
           &:nth-of-type(2):not(#mobile-pay-p) {
             margin-top: 20px; // move the input area lower. temp solution
+          }
+          &:nth-of-type(3):not(#mobile-pay-p) {
+            margin-top: 10px; // move the input area lower. temp solution
           }
           &:last-of-type:not(#mobile-pay-p) {
             // the CVV line, move up and right. temp solution
@@ -163,7 +170,7 @@ body {
             border-radius: 0;
           }
           &#mobile-pay-p input {
-            width: 80%;
+            width: 70%;
             height: 30px;
             font-size: 24px;
             padding: 6px 25px;
@@ -197,9 +204,15 @@ body {
     // div.pay input[type="radio"]:checked ~ input[type="number"] + label {
     //   display: inherit;
     // }
+    div.pay span.imgs {
+      position: absolute;
+      text-align: right;
+      right: 3%;
+      top: 7px;
+    }
     div.pay img {
-      width: 50px;
-      margin-right: 4px;
+      width: 40px;
+      margin-right: 3px;
       vertical-align: middle;
     }
     img#mobile-pay-img {
@@ -208,41 +221,6 @@ body {
     }
     div.pay img.filler {
       visibility: hidden;
-    }
-    #mobile-pay-confirm.not-active {
-      display: none;
-    }
-    #mobile-pay-confirm {
-      width: 100%;
-      height: 60px;
-      border-radius: 34px;
-      margin-top: 20px;
-      background-color: #596aa3;
-      position: relative;
-      display: flex;
-    }
-    #mobile-pay-confirm div {
-      height: 56px;
-      width: 56px;
-      border-radius: 28px;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      background-color: white;
-      display: flex;
-      p {
-        // temp solution, should use real check mark instead of >
-        color: #596aa3;
-        font-weight: bold;
-        align-self: center;
-        text-align: center;
-      }
-    }
-    #mobile-pay-confirm div + p {
-      color: white;
-      display: inline-block;
-      align-self: center;
-      text-align: center;
     }
     label[for="giro-check"] {
       display: flex;
@@ -257,13 +235,56 @@ body {
       width: 30px;
       display: none;
     }
-    p.close {
+    span.close {
+      display: inline-block;
+      width: auto;
       position: absolute;
       right: 0;
-      top: 10px;
+      top: 0;
       text-align: right;
       cursor: pointer;
     }
+  }
+  #mobile-pay-confirm.not-active {
+    display: none;
+  }
+  #mobile-pay-confirm {
+    filter: grayscale(0.7);
+    width: 100%;
+    height: 60px;
+    border-radius: 34px;
+    margin-top: 20px;
+    background-color: #596aa3;
+    position: relative;
+    display: flex;
+  }
+  #mobile-pay-confirm.live {
+    filter: grayscale(0);
+  }
+  #mobile-pay-confirm div {
+    height: 56px;
+    width: 56px;
+    border-radius: 28px;
+    position: absolute;
+    top: -6px;
+    left: 2px;
+    background-color: white;
+    display: flex;
+    p {
+      width: 100%;
+      // temp solution, should use real check mark instead of >
+      color: #596aa3;
+      font-weight: bold;
+      align-self: center;
+      text-align: center;
+    }
+  }
+  #mobile-pay-confirm div + p {
+    width: 100%;
+    color: white;
+    display: inline-block;
+    align-self: center;
+    text-align: center;
   }
 }
 h1 {

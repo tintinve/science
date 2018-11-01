@@ -39,6 +39,7 @@ allsubscriptionBox.forEach(p =>
     // remove previously checked
     allsubscriptionBox.forEach(p => {
       p.parentElement.style.border = "none";
+      p.parentElement.style.backgroundColor = "white";
       p.removeAttribute("checked");
     });
     // add newly checked
@@ -49,6 +50,9 @@ allsubscriptionBox.forEach(p =>
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
     ).parentElement.style.border = "2px solid #0077ff";
+    document.querySelector(
+      'input[name="nr-of-issues"]:checked'
+    ).parentElement.style.backgroundColor = "lightblue";
 
     document.querySelector(
       'input[name="nr-of-issues"]:checked'
@@ -76,6 +80,7 @@ allsubscriptionBox.forEach(p =>
       document.querySelector(".i-alt").textContent =
         "I Alt: " + sumStringWithComma + " kr.";
     }
+    checkAll();
   })
 );
 
@@ -93,7 +98,8 @@ const submitButton = document.querySelector('button[type="submit"]');
 const mobilePaySubmit = document.querySelector("#mobile-pay-confirm");
 
 let formCheck = false;
-let paymentCheck = false;
+let paymentCheck = [];
+let chosenPayment;
 let agreementCheck = false;
 
 inputFieldS.forEach(checkInput);
@@ -151,8 +157,9 @@ function getDataBasedonPostNr() {
  * show input field based on which payment method is selected
  */
 const allPaymentMethodS = document.querySelectorAll('.pay input[type="radio"]');
-allPaymentMethodS.forEach(p =>
+allPaymentMethodS.forEach((p, pi) =>
   p.addEventListener("click", () => {
+    chosenPayment = pi;
     // remove previously checked
     allPaymentMethodS.forEach(p => {
       p.removeAttribute("checked");
@@ -160,7 +167,8 @@ allPaymentMethodS.forEach(p =>
       p.nextElementSibling.style.opacity = "1";
       p.nextElementSibling.nextElementSibling.style.transform = "scale(0)"; // individual payment input area
       p.parentElement.style.border = "none";
-      p.parentElement.style.height = "50px";
+      p.nextElementSibling.style.backgroundColor = "white";
+      p.parentElement.style.height = "46px";
     });
     // add newly checked
     document
@@ -170,16 +178,14 @@ allPaymentMethodS.forEach(p =>
     document.querySelector(
       'input[name="payment"]:checked'
     ).parentElement.style.border = "2px solid #0077ff";
+    document.querySelector(
+      'input[name="payment"]:checked'
+    ).nextElementSibling.style.backgroundColor = "lightblue";
     if (
       document.querySelector('input[name="payment"]:checked').value ===
-      "girokort"
-    ) {
-      document.querySelector(
-        'input[name="payment"]:checked'
-      ).parentElement.style.height = "100px";
-    } else if (
+        "girokort" ||
       document.querySelector('input[name="payment"]:checked').value ===
-      "mobile-pay"
+        "mobile-pay"
     ) {
       document.querySelector(
         'input[name="payment"]:checked'
@@ -194,22 +200,28 @@ allPaymentMethodS.forEach(p =>
     ).nextElementSibling.nextElementSibling.style.display = "inherit";
     // check card input
     if (p.value === "girokort") {
-      paymentCheck = true;
+      paymentCheck[3] = true;
       checkAll();
     } else {
       let inputS = p.nextElementSibling.nextElementSibling.querySelectorAll(
         "p input"
       );
       let validCount = 0;
+      let countSofar;
       inputS.forEach(checkValid);
       function checkValid(i) {
         i.addEventListener("input", () => {
           if (i.validity.valid) {
             validCount++;
-            if (validCount === inputS.length) {
-              paymentCheck = true;
+            countSofar++;
+            if (validCount === inputS.length || countSofar === inputS.length) {
+              paymentCheck[pi] = true;
               checkAll();
             }
+          } else {
+            countSofar = validCount;
+            countSofar--;
+            checkAll();
           }
         });
       }
@@ -232,14 +244,14 @@ const closeXS = document.querySelectorAll(".close");
 closeXS.forEach(x => x.addEventListener("click", closeCard));
 function closeCard(m) {
   //  m.target.parentElement.style.transform = "scale(0)";
-  m.target.parentElement.parentElement.style.height = "50px";
+  m.target.parentElement.parentElement.style.height = "46px";
   m.target.parentElement.style.display = "none";
   m.target.parentElement.parentElement
     .querySelector('input[type="radio"]')
     .removeAttribute("checked");
   mobilePayInput.value = "";
   mobilePaySubmit.className = "not-active";
-  submitButton.className = "not-active";
+  submitButton.classList.add("not-active");
 }
 
 /**
@@ -248,14 +260,30 @@ function closeCard(m) {
 const paymentS = document.querySelectorAll('input[name="payment"]');
 paymentS.forEach(p => p.addEventListener("change", checkPaymentChoice));
 function checkPaymentChoice() {
+  submitButton.style.display = "inherit";
+  mobilePaySubmit.classList.add("not-active");
   let paymentChoice = document.querySelectorAll(
     'input[name="payment"][checked]'
   );
+  checkMobilePay();
   mobilePayInput.addEventListener("input", checkMobilePay);
   function checkMobilePay() {
     if (paymentChoice[0].id === "mobile-pay" && mobilePayInput.validity.valid) {
       mobilePaySubmit.classList.remove("not-active");
-      window.scrollTo(0, 270);
+      submitButton.style.display = "none";
+      paymentCheck[2] = true;
+      checkAll();
+    } else if (
+      paymentChoice[0].id === "mobile-pay" &&
+      !mobilePayInput.validity.valid
+    ) {
+      mobilePaySubmit.classList.remove("not-active");
+      submitButton.style.display = "none";
+      mobilePaySubmit.classList.remove("live");
+    } else if (paymentChoice[0].id !== "mobile-pay") {
+      mobilePaySubmit.classList.add("not-active");
+      submitButton.style.display = "inherit";
+      checkAll();
     }
   }
 }
@@ -268,21 +296,40 @@ agreement.addEventListener("change", checkAgreement);
 function checkAgreement() {
   if (agreement.checked) {
     agreementCheck = true;
-    checkAll();
+  } else {
+    agreementCheck = false;
   }
+  checkAll();
 }
 /**
  * show button when everything is set
  */
 checkAll();
 function checkAll() {
-  if (
-    formCheck === true &&
-    choiceCheck === true &&
-    paymentCheck === true &&
-    agreementCheck === true
-  ) {
-    submitButton.classList.add("live");
+  console.log(paymentCheck);
+  for (let i = 0; i < form.elements.length; i++) {
+    //    console.log(i + ": " + form.elements[i].value);
+    // 9-12 are input user info
+    // 14-17 are visa/dankort
+    // 19-22 are credit card
+    // 24 is mobilepay
+    // 25 is giro
+    if (
+      formCheck === true &&
+      choiceCheck === true &&
+      paymentCheck[chosenPayment] === true &&
+      agreementCheck === true &&
+      form.elements[9].value &&
+      form.elements[10].value &&
+      form.elements[11].value &&
+      form.elements[12].value
+    ) {
+      submitButton.classList.add("live");
+      mobilePaySubmit.classList.add("live");
+    } else {
+      submitButton.classList.remove("live");
+      mobilePaySubmit.classList.remove("live");
+    }
   }
 }
 
