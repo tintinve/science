@@ -123,7 +123,7 @@ const adress = document.querySelector("#address");
 let dataArray = [];
 postNrInput.addEventListener("input", getDataBasedonPostNr);
 function getDataBasedonPostNr() {
-  fetch("js/postnummer.json")
+  fetch("postnummer.json")
     .then(data => data.json())
     .then(d => {
       dataArray = d;
