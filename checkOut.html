@@ -133,9 +133,9 @@
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" autocomplete="cc-number"
                             placeholder="Kortnummer" required></p>
-                    <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
+                    <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" placeholder="mm"
                             class="digit2" pattern="[0-9]{2}" autocomplete="cc-exp-month" required><span>
-                            / </span><input type="text" pattern="[0-9]{4}" name="card-exp-year" id="dankort-exp-year"
+                            / </span><input type="number" min="2018" max="2030" name="card-exp-year" id="dankort-exp-year"
                             placeholder="yyyy" maxlength="4" class="digit4" autocomplete="cc-exp-year" required></p>
                     <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
                             autocomplete="cc-csc" class="digit4" required></p>
@@ -153,10 +153,11 @@
                     <p>
                         <input type="text" name="card-nr" id="dankort-nr" pattern="[0-9]{16}" placeholder="Kortnummer"
                             autocomplete="cc-number" required></p>
-                    <p><input type="text" name="card-exp-month" id="dankort-exp-month" maxlength="2" placeholder="mm"
-                            autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}" required><span>
-                            / </span><input type="text" name="card-exp-year" id="dankort-exp-year" placeholder="yyyy"
-                            maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}" required></p>
+                    <p><input type="number" name="card-exp-month" id="dankort-exp-month" min="1" max="12" maxlength="2"
+                            placeholder="mm" autocomplete="cc-exp-month" class="digit2" pattern="[0-9]{2}" required><span>
+                            / </span><input type="number" min="2018" max="2030" name="card-exp-year" id="dankort-exp-year"
+                            placeholder="yyyy" maxlength="4" autocomplete="cc-exp-year" class="digit4" pattern="[0-9]{4}"
+                            required></p>
                     <p><input type="text" id="control" name="control" maxlength="4" pattern="[0-9]{3}" placeholder="CVV"
                             autocomplete="cc-csc" class="digit4" required></p>
                 </label>
