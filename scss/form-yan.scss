@@ -27,13 +27,18 @@ body {
         align-self: center;
       }
     }
-    h4,
     .explaination {
       font-weight: normal;
       width: 90%;
       margin-left: 0;
       margin-bottom: 0.3em;
       font-size: 18px;
+    }
+    h4 {
+      font-size: 18px;
+      margin-top: 0.9em;
+      margin-bottom: 0.5em;
+      font-weight: normal;
     }
     div {
       height: 60px;
@@ -128,7 +133,7 @@ body {
         text-align: left;
         display: flex;
         p {
-          font-size: 16px;
+          font-size: 18px;
           align-self: center;
         }
       }
@@ -137,10 +142,11 @@ body {
         left: 0;
         top: 70px;
         p {
-          font-size: 13px;
+          font-size: 24px;
           width: 100%;
           height: 30px;
           border-bottom: none;
+          font-weight: 100;
           &:nth-of-type(1):not(#mobile-pay-p) {
             margin-top: 20px;
           }
