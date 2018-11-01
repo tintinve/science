@@ -109,13 +109,15 @@ body {
     }
     div.pay {
       overflow: hidden;
-      height: 46px;
+      height: 45px;
       margin: 0 auto;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       padding: 0 10%;
       background-color: white;
       border-radius: 5px;
+      transition: height 0.3s ease-out;
+
       input[type="radio"] {
         height: 50px;
         & ~ .payment-label-around-div {
