@@ -32,13 +32,6 @@ body {
   border-radius: 5px;
 }
 
-visa,
-kreditKort,
-mobilePay,
-giroKort {
-  display: inline-block;
-}
-
 /* ORDER OVERVIEW */
 
 .block7,
