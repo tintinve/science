@@ -27,7 +27,6 @@ body {
         align-self: center;
       }
     }
-    h4,
     .explaination {
       font-weight: normal;
       width: 90%;
@@ -35,9 +34,11 @@ body {
       margin-bottom: 0.3em;
       font-size: 18px;
     }
-    h4,
-    .explaination:nth-child(2) {
-      margin-bottom: 0.5em;
+    h4 {
+      font-size: 18px;
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
+      font-weight: normal;
     }
     div {
       height: 60px;
